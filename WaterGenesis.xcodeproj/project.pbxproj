@@ -3,50 +3,120 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		061058AE2CC1F50100426D64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058AC2CC1F50100426D64 /* ViewController.swift */; };
+		061058AF2CC1F50100426D64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058AB2CC1F50100426D64 /* SceneDelegate.swift */; };
+		061058B02CC1F50100426D64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058A42CC1F50100426D64 /* AppDelegate.swift */; };
+		061058B12CC1F50100426D64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 061058A82CC1F50100426D64 /* LaunchScreen.storyboard */; };
+		061058B22CC1F50100426D64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 061058A52CC1F50100426D64 /* Assets.xcassets */; };
+		061058B62CC1FB1F00426D64 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058B52CC1FB1B00426D64 /* SplashVC.swift */; };
+		061058B82CC1FB4700426D64 /* PermissionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058B72CC1FB3C00426D64 /* PermissionPopUp.swift */; };
+		061058BA2CC1FB6C00426D64 /* PaddingPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058B92CC1FB6900426D64 /* PaddingPanel.swift */; };
+		061058BD2CC1FCEA00426D64 /* UIViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058BC2CC1FCE200426D64 /* UIViewEx.swift */; };
+		061058C12CC1FDF500426D64 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058C02CC1FDF200426D64 /* ShadowView.swift */; };
+		061058C32CC1FFA200426D64 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058C22CC1FF9900426D64 /* IndicatorView.swift */; };
+		061058C72CC2085500426D64 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 061058C42CC2085500426D64 /* cameraIcon.png */; };
+		061058C82CC2085500426D64 /* notiIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 061058C52CC2085500426D64 /* notiIcon.png */; };
+		061058C92CC2085500426D64 /* pictureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 061058C62CC2085500426D64 /* pictureIcon.png */; };
+		061058CC2CC22E3A00426D64 /* mainLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 061058CB2CC22E3A00426D64 /* mainLogo.png */; };
+		064B33432CC1F45100EB00A6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 064B33422CC1F45100EB00A6 /* .swiftlint.yml */; };
+		8DC62C09C65166682F0EA6B1 /* Pods_WaterGenesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A61FEF882D13FE16B3CF53 /* Pods_WaterGenesis.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		061058A42CC1F50100426D64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		061058A52CC1F50100426D64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		061058A62CC1F50100426D64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		061058A72CC1F50100426D64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		061058AB2CC1F50100426D64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		061058AC2CC1F50100426D64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		061058B52CC1FB1B00426D64 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		061058B72CC1FB3C00426D64 /* PermissionPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionPopUp.swift; sourceTree = "<group>"; };
+		061058B92CC1FB6900426D64 /* PaddingPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingPanel.swift; sourceTree = "<group>"; };
+		061058BC2CC1FCE200426D64 /* UIViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEx.swift; sourceTree = "<group>"; };
+		061058C02CC1FDF200426D64 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		061058C22CC1FF9900426D64 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
+		061058C42CC2085500426D64 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
+		061058C52CC2085500426D64 /* notiIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notiIcon.png; sourceTree = "<group>"; };
+		061058C62CC2085500426D64 /* pictureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pictureIcon.png; sourceTree = "<group>"; };
+		061058CB2CC22E3A00426D64 /* mainLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainLogo.png; sourceTree = "<group>"; };
+		064B33422CC1F45100EB00A6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		067E846A2CC1ED4300BD5EAB /* WaterGenesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterGenesis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB7C8905741A8D9D3B46BE1F /* Pods-WaterGenesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterGenesis.release.xcconfig"; path = "Target Support Files/Pods-WaterGenesis/Pods-WaterGenesis.release.xcconfig"; sourceTree = "<group>"; };
+		E7A61FEF882D13FE16B3CF53 /* Pods_WaterGenesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterGenesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F628BE4D1F3CE2BD0D2DC8E8 /* Pods-WaterGenesis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterGenesis.debug.xcconfig"; path = "Target Support Files/Pods-WaterGenesis/Pods-WaterGenesis.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		067E847C2CC1ED4400BD5EAB /* Exceptions for "WaterGenesis" folder in "WaterGenesis" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 067E84692CC1ED4300BD5EAB /* WaterGenesis */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		067E846C2CC1ED4300BD5EAB /* WaterGenesis */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				067E847C2CC1ED4400BD5EAB /* Exceptions for "WaterGenesis" folder in "WaterGenesis" target */,
-			);
-			path = WaterGenesis;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		067E84672CC1ED4300BD5EAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DC62C09C65166682F0EA6B1 /* Pods_WaterGenesis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061058AD2CC1F50100426D64 /* WaterGenesis */ = {
+			isa = PBXGroup;
+			children = (
+				061058BE2CC1FDDF00426D64 /* Custom */,
+				061058BB2CC1FCD900426D64 /* Extension */,
+				061058B92CC1FB6900426D64 /* PaddingPanel.swift */,
+				061058B72CC1FB3C00426D64 /* PermissionPopUp.swift */,
+				061058B52CC1FB1B00426D64 /* SplashVC.swift */,
+				061058A42CC1F50100426D64 /* AppDelegate.swift */,
+				061058A52CC1F50100426D64 /* Assets.xcassets */,
+				061058A62CC1F50100426D64 /* Info.plist */,
+				061058A82CC1F50100426D64 /* LaunchScreen.storyboard */,
+				061058AB2CC1F50100426D64 /* SceneDelegate.swift */,
+				061058AC2CC1F50100426D64 /* ViewController.swift */,
+			);
+			path = WaterGenesis;
+			sourceTree = "<group>";
+		};
+		061058BB2CC1FCD900426D64 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				061058BC2CC1FCE200426D64 /* UIViewEx.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		061058BE2CC1FDDF00426D64 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				061058C22CC1FF9900426D64 /* IndicatorView.swift */,
+				061058C02CC1FDF200426D64 /* ShadowView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		061058CA2CC2085A00426D64 /* Sorce */ = {
+			isa = PBXGroup;
+			children = (
+				061058CB2CC22E3A00426D64 /* mainLogo.png */,
+				061058C42CC2085500426D64 /* cameraIcon.png */,
+				061058C52CC2085500426D64 /* notiIcon.png */,
+				061058C62CC2085500426D64 /* pictureIcon.png */,
+			);
+			path = Sorce;
+			sourceTree = "<group>";
+		};
 		067E84612CC1ED4300BD5EAB = {
 			isa = PBXGroup;
 			children = (
-				067E846C2CC1ED4300BD5EAB /* WaterGenesis */,
+				061058CA2CC2085A00426D64 /* Sorce */,
+				064B33422CC1F45100EB00A6 /* .swiftlint.yml */,
+				061058AD2CC1F50100426D64 /* WaterGenesis */,
 				067E846B2CC1ED4300BD5EAB /* Products */,
+				2035CD71C7E261E68DDBC1DD /* Pods */,
+				8B31834E443874146752BE21 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +128,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2035CD71C7E261E68DDBC1DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F628BE4D1F3CE2BD0D2DC8E8 /* Pods-WaterGenesis.debug.xcconfig */,
+				AB7C8905741A8D9D3B46BE1F /* Pods-WaterGenesis.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8B31834E443874146752BE21 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7A61FEF882D13FE16B3CF53 /* Pods_WaterGenesis.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,20 +152,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 067E847D2CC1ED4400BD5EAB /* Build configuration list for PBXNativeTarget "WaterGenesis" */;
 			buildPhases = (
+				6886578FB6B85DFE812BC2FF /* [CP] Check Pods Manifest.lock */,
+				064B33412CC1F35E00EB00A6 /* SwiftLint */,
 				067E84662CC1ED4300BD5EAB /* Sources */,
 				067E84672CC1ED4300BD5EAB /* Frameworks */,
 				067E84682CC1ED4300BD5EAB /* Resources */,
+				06B7169D649FA118423597C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				067E846C2CC1ED4300BD5EAB /* WaterGenesis */,
-			);
 			name = WaterGenesis;
-			packageProductDependencies = (
-			);
 			productName = WaterGenesis;
 			productReference = 067E846A2CC1ED4300BD5EAB /* WaterGenesis.app */;
 			productType = "com.apple.product-type.application";
@@ -99,6 +184,7 @@
 				};
 			};
 			buildConfigurationList = 067E84652CC1ED4300BD5EAB /* Build configuration list for PBXProject "WaterGenesis" */;
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -107,7 +193,6 @@
 			);
 			mainGroup = 067E84612CC1ED4300BD5EAB;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 067E846B2CC1ED4300BD5EAB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,24 +207,112 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061058CC2CC22E3A00426D64 /* mainLogo.png in Resources */,
+				061058B12CC1F50100426D64 /* LaunchScreen.storyboard in Resources */,
+				061058B22CC1F50100426D64 /* Assets.xcassets in Resources */,
+				061058C72CC2085500426D64 /* cameraIcon.png in Resources */,
+				061058C82CC2085500426D64 /* notiIcon.png in Resources */,
+				061058C92CC2085500426D64 /* pictureIcon.png in Resources */,
+				064B33432CC1F45100EB00A6 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		064B33412CC1F35E00EB00A6 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		06B7169D649FA118423597C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterGenesis/Pods-WaterGenesis-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WaterGenesis/Pods-WaterGenesis-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WaterGenesis/Pods-WaterGenesis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6886578FB6B85DFE812BC2FF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WaterGenesis-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		067E84662CC1ED4300BD5EAB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061058B82CC1FB4700426D64 /* PermissionPopUp.swift in Sources */,
+				061058AE2CC1F50100426D64 /* ViewController.swift in Sources */,
+				061058BA2CC1FB6C00426D64 /* PaddingPanel.swift in Sources */,
+				061058BD2CC1FCEA00426D64 /* UIViewEx.swift in Sources */,
+				061058C32CC1FFA200426D64 /* IndicatorView.swift in Sources */,
+				061058C12CC1FDF500426D64 /* ShadowView.swift in Sources */,
+				061058B62CC1FB1F00426D64 /* SplashVC.swift in Sources */,
+				061058AF2CC1F50100426D64 /* SceneDelegate.swift in Sources */,
+				061058B02CC1F50100426D64 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		061058A82CC1F50100426D64 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				061058A72CC1F50100426D64 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		067E847E2CC1ED4400BD5EAB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F628BE4D1F3CE2BD0D2DC8E8 /* Pods-WaterGenesis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -150,9 +323,10 @@
 				INFOPLIST_FILE = WaterGenesis/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -168,6 +342,7 @@
 		};
 		067E847F2CC1ED4400BD5EAB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB7C8905741A8D9D3B46BE1F /* Pods-WaterGenesis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -178,9 +353,10 @@
 				INFOPLIST_FILE = WaterGenesis/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -231,7 +407,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -246,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -294,7 +470,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -303,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

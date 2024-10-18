@@ -11,12 +11,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    let spinner = IndicatorView()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController?.navigationController?.navigationBar.isHidden = true
+            UINavigationBar.appearance().barTintColor = UIColor.white
+            UINavigationBar.appearance().shadowImage = UIImage()
+            UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+            UINavigationBar.appearance().layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+            self.window = window
+            print("window")
+            spinner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            window.addSubview(spinner)
+            window.rootViewController = UINavigationController(rootViewController: SplashVC())
+            window.makeKeyAndVisible()
+
+        }
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
