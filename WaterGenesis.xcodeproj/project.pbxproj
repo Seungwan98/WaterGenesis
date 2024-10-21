@@ -16,13 +16,21 @@
 		061058B82CC1FB4700426D64 /* PermissionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058B72CC1FB3C00426D64 /* PermissionPopUp.swift */; };
 		061058BA2CC1FB6C00426D64 /* PaddingPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058B92CC1FB6900426D64 /* PaddingPanel.swift */; };
 		061058BD2CC1FCEA00426D64 /* UIViewEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058BC2CC1FCE200426D64 /* UIViewEx.swift */; };
-		061058C12CC1FDF500426D64 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058C02CC1FDF200426D64 /* ShadowView.swift */; };
+		061058C12CC1FDF500426D64 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058C02CC1FDF200426D64 /* Shadow.swift */; };
 		061058C32CC1FFA200426D64 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061058C22CC1FF9900426D64 /* IndicatorView.swift */; };
 		061058C72CC2085500426D64 /* cameraIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 061058C42CC2085500426D64 /* cameraIcon.png */; };
 		061058C82CC2085500426D64 /* notiIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 061058C52CC2085500426D64 /* notiIcon.png */; };
 		061058C92CC2085500426D64 /* pictureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 061058C62CC2085500426D64 /* pictureIcon.png */; };
 		061058CC2CC22E3A00426D64 /* mainLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 061058CB2CC22E3A00426D64 /* mainLogo.png */; };
 		064B33432CC1F45100EB00A6 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 064B33422CC1F45100EB00A6 /* .swiftlint.yml */; };
+		607F45F52CC386DD000A3C04 /* CustomWnH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F42CC386DD000A3C04 /* CustomWnH.swift */; };
+		607F45FA2CC3ABDD000A3C04 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F92CC3ABDD000A3C04 /* MainVC.swift */; };
+		607F46002CC3B6B8000A3C04 /* homeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 607F45FD2CC3B6B8000A3C04 /* homeIcon.png */; };
+		607F46012CC3B6B8000A3C04 /* cleanIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 607F45FE2CC3B6B8000A3C04 /* cleanIcon.png */; };
+		607F46022CC3B6B8000A3C04 /* pointIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 607F45FF2CC3B6B8000A3C04 /* pointIcon.png */; };
+		607F46042CC3FD96000A3C04 /* ShdowingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F46032CC3FD96000A3C04 /* ShdowingView.swift */; };
+		607F46062CC42396000A3C04 /* face.png in Resources */ = {isa = PBXBuildFile; fileRef = 607F46052CC42396000A3C04 /* face.png */; };
+		607F46082CC427F6000A3C04 /* leaves.png in Resources */ = {isa = PBXBuildFile; fileRef = 607F46072CC427F6000A3C04 /* leaves.png */; };
 		8DC62C09C65166682F0EA6B1 /* Pods_WaterGenesis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A61FEF882D13FE16B3CF53 /* Pods_WaterGenesis.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +45,7 @@
 		061058B72CC1FB3C00426D64 /* PermissionPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionPopUp.swift; sourceTree = "<group>"; };
 		061058B92CC1FB6900426D64 /* PaddingPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingPanel.swift; sourceTree = "<group>"; };
 		061058BC2CC1FCE200426D64 /* UIViewEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewEx.swift; sourceTree = "<group>"; };
-		061058C02CC1FDF200426D64 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		061058C02CC1FDF200426D64 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		061058C22CC1FF9900426D64 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		061058C42CC2085500426D64 /* cameraIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraIcon.png; sourceTree = "<group>"; };
 		061058C52CC2085500426D64 /* notiIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notiIcon.png; sourceTree = "<group>"; };
@@ -45,6 +53,14 @@
 		061058CB2CC22E3A00426D64 /* mainLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainLogo.png; sourceTree = "<group>"; };
 		064B33422CC1F45100EB00A6 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		067E846A2CC1ED4300BD5EAB /* WaterGenesis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterGenesis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		607F45F42CC386DD000A3C04 /* CustomWnH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWnH.swift; sourceTree = "<group>"; };
+		607F45F92CC3ABDD000A3C04 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		607F45FD2CC3B6B8000A3C04 /* homeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeIcon.png; sourceTree = "<group>"; };
+		607F45FE2CC3B6B8000A3C04 /* cleanIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleanIcon.png; sourceTree = "<group>"; };
+		607F45FF2CC3B6B8000A3C04 /* pointIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pointIcon.png; sourceTree = "<group>"; };
+		607F46032CC3FD96000A3C04 /* ShdowingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShdowingView.swift; sourceTree = "<group>"; };
+		607F46052CC42396000A3C04 /* face.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = face.png; sourceTree = "<group>"; };
+		607F46072CC427F6000A3C04 /* leaves.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leaves.png; sourceTree = "<group>"; };
 		AB7C8905741A8D9D3B46BE1F /* Pods-WaterGenesis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterGenesis.release.xcconfig"; path = "Target Support Files/Pods-WaterGenesis/Pods-WaterGenesis.release.xcconfig"; sourceTree = "<group>"; };
 		E7A61FEF882D13FE16B3CF53 /* Pods_WaterGenesis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WaterGenesis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F628BE4D1F3CE2BD0D2DC8E8 /* Pods-WaterGenesis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WaterGenesis.debug.xcconfig"; path = "Target Support Files/Pods-WaterGenesis/Pods-WaterGenesis.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +86,7 @@
 				061058B92CC1FB6900426D64 /* PaddingPanel.swift */,
 				061058B72CC1FB3C00426D64 /* PermissionPopUp.swift */,
 				061058B52CC1FB1B00426D64 /* SplashVC.swift */,
+				607F45F92CC3ABDD000A3C04 /* MainVC.swift */,
 				061058A42CC1F50100426D64 /* AppDelegate.swift */,
 				061058A52CC1F50100426D64 /* Assets.xcassets */,
 				061058A62CC1F50100426D64 /* Info.plist */,
@@ -84,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				061058BC2CC1FCE200426D64 /* UIViewEx.swift */,
+				607F45F42CC386DD000A3C04 /* CustomWnH.swift */,
+				607F46032CC3FD96000A3C04 /* ShdowingView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -92,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				061058C22CC1FF9900426D64 /* IndicatorView.swift */,
-				061058C02CC1FDF200426D64 /* ShadowView.swift */,
+				061058C02CC1FDF200426D64 /* Shadow.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -100,6 +119,11 @@
 		061058CA2CC2085A00426D64 /* Sorce */ = {
 			isa = PBXGroup;
 			children = (
+				607F46072CC427F6000A3C04 /* leaves.png */,
+				607F46052CC42396000A3C04 /* face.png */,
+				607F45FE2CC3B6B8000A3C04 /* cleanIcon.png */,
+				607F45FD2CC3B6B8000A3C04 /* homeIcon.png */,
+				607F45FF2CC3B6B8000A3C04 /* pointIcon.png */,
 				061058CB2CC22E3A00426D64 /* mainLogo.png */,
 				061058C42CC2085500426D64 /* cameraIcon.png */,
 				061058C52CC2085500426D64 /* notiIcon.png */,
@@ -208,12 +232,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				061058CC2CC22E3A00426D64 /* mainLogo.png in Resources */,
+				607F46082CC427F6000A3C04 /* leaves.png in Resources */,
 				061058B12CC1F50100426D64 /* LaunchScreen.storyboard in Resources */,
+				607F46012CC3B6B8000A3C04 /* cleanIcon.png in Resources */,
+				607F46002CC3B6B8000A3C04 /* homeIcon.png in Resources */,
 				061058B22CC1F50100426D64 /* Assets.xcassets in Resources */,
 				061058C72CC2085500426D64 /* cameraIcon.png in Resources */,
 				061058C82CC2085500426D64 /* notiIcon.png in Resources */,
 				061058C92CC2085500426D64 /* pictureIcon.png in Resources */,
+				607F46062CC42396000A3C04 /* face.png in Resources */,
 				064B33432CC1F45100EB00A6 /* .swiftlint.yml in Resources */,
+				607F46022CC3B6B8000A3C04 /* pointIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,14 +313,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				607F46042CC3FD96000A3C04 /* ShdowingView.swift in Sources */,
 				061058B82CC1FB4700426D64 /* PermissionPopUp.swift in Sources */,
 				061058AE2CC1F50100426D64 /* ViewController.swift in Sources */,
 				061058BA2CC1FB6C00426D64 /* PaddingPanel.swift in Sources */,
 				061058BD2CC1FCEA00426D64 /* UIViewEx.swift in Sources */,
+				607F45FA2CC3ABDD000A3C04 /* MainVC.swift in Sources */,
 				061058C32CC1FFA200426D64 /* IndicatorView.swift in Sources */,
-				061058C12CC1FDF500426D64 /* ShadowView.swift in Sources */,
+				061058C12CC1FDF500426D64 /* Shadow.swift in Sources */,
 				061058B62CC1FB1F00426D64 /* SplashVC.swift in Sources */,
 				061058AF2CC1F50100426D64 /* SceneDelegate.swift in Sources */,
+				607F45F52CC386DD000A3C04 /* CustomWnH.swift in Sources */,
 				061058B02CC1F50100426D64 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +358,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +388,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,7 +454,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -479,7 +511,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

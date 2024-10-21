@@ -22,6 +22,7 @@ class ShadowView: UIView {
     var shadowoffset = CGSize()
     
     override func didMoveToWindow() {
+        self.layer.masksToBounds = false
         self.layer.shadowColor = shadowcolor.cgColor
         self.layer.shadowRadius = shadowradius
         self.layer.shadowOpacity = shadowopacity
@@ -38,7 +39,7 @@ class ShadowBtn: UIButton {
     
     var shadowcolor = UIColor()
     var shadowradius: CGFloat = 0
-   var shadowopacity: Float = 0
+    var shadowopacity: Float = 0
     var shadowoffset = CGSize()
     
     override func didMoveToWindow() {

@@ -46,4 +46,3 @@ class IndicatorView: UIView {
       
     }
 }
-

@@ -72,8 +72,36 @@ extension SplashVC: PermissionPopUpDelegate {
  */
     func permissionallowbtnpressed() {
 //        UserDefaults.standard.set(false, forKey: userstandard.setpermissionpopup.rawValue)
-        let view = ViewController()
-        self.navigationController?.pushViewController(view, animated: true)
+        
+        let firstVC = UINavigationController(rootViewController: MainVC())
+        firstVC.view.backgroundColor = .white
+        let secondVC = UINavigationController(rootViewController: ViewController())
+        let thirdVC = UINavigationController(rootViewController: UIViewController())
+        
+        let tabBarController = UITabBarController()
+        tabBarController.setViewControllers([firstVC, secondVC, thirdVC], animated: true)
+        
+        self.navigationController?.viewControllers = [tabBarController]
+        
+        tabBarController.tabBar.clipsToBounds = true
+        tabBarController.tabBar.tintColor = maincolor
+        if let items = tabBarController.tabBar.items {
+            items[0].imageInsets = .init(top: 12, left: 12, bottom: 12, right: 12)
+            items[0].image = UIImage(named: "homeIcon")
+            items[0].title = "홈"
+            
+            
+            items[1].imageInsets = .init(top: 12, left: 12, bottom: 12, right: 12)
+            items[1].selectedImage = UIImage(systemName: "pointIcon")?.withTintColor(maincolor)
+            items[1].image = UIImage(named: "pointIcon")
+            items[1].title = "포인트"
+            
+            items[2].selectedImage = UIImage(systemName: "cleanIcon")?.withTintColor(maincolor)
+            items[2].imageInsets = .init(top: 13, left: 13, bottom: 13, right: 13)
+            items[2].image = UIImage(named: "cleanIcon")
+            items[2].title = "클린지니"
+            
+        }
     }
     
     
