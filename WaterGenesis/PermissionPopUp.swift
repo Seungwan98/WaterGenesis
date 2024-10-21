@@ -57,7 +57,11 @@ class PermissionPopUp: UIView {
     
     private var notyimage = UIImageView()
     
-    private var notytitle = PaddingLabel()
+    private var notytitle = PaddingLabel().then {
+        $0.textColor = .rgb(red: 51, green: 51, blue: 51, alpha: 1)
+        $0.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        $0.text = "알림"
+    }
     
     lazy private var nestedstack3: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [notyimage, notytitle, UIView()])
@@ -204,11 +208,7 @@ extension PermissionPopUp {
         notytitle.snp.makeConstraints {
             $0.centerY.equalTo(self.notyimage.snp.centerY)
         }
-        notytitle.then {
-            $0.textColor = .rgb(red: 51, green: 51, blue: 51, alpha: 1)
-            $0.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-            $0.text = "알림"
-        }
+ 
         notyimage.snp.makeConstraints {
             
             $0.width.height.equalTo(24)

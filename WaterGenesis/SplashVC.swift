@@ -76,10 +76,11 @@ extension SplashVC: PermissionPopUpDelegate {
         let firstVC = UINavigationController(rootViewController: MainVC())
         firstVC.view.backgroundColor = .white
         let secondVC = UINavigationController(rootViewController: ViewController())
-        let thirdVC = UINavigationController(rootViewController: UIViewController())
+        let thirdVC = UINavigationController(rootViewController: ScannerViewController()) //스캐너
+        let fourthVC = UINavigationController(rootViewController: MyPageVC()) //마이페이지
         
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([firstVC, secondVC, thirdVC], animated: true)
+        tabBarController.setViewControllers([firstVC, secondVC, thirdVC, fourthVC], animated: true)
         
         self.navigationController?.viewControllers = [tabBarController]
         
@@ -100,6 +101,12 @@ extension SplashVC: PermissionPopUpDelegate {
             items[2].imageInsets = .init(top: 13, left: 13, bottom: 13, right: 13)
             items[2].image = UIImage(named: "cleanIcon")
             items[2].title = "클린지니"
+            
+            
+            items[3].imageInsets = .init(top: 16, left: 16, bottom: 16, right: 16)
+            items[3].selectedImage = UIImage(systemName: "myprofile")?.withTintColor(maincolor)
+            items[3].image = UIImage(named: "myprofile")
+            items[3].title = "마이페이지"
             
         }
     }
