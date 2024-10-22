@@ -20,12 +20,14 @@ class ColorButton: UIButton {
     }
     
     func setTitle(text: String) {
-        self.setTitle("", for: .normal)
-        self.titleLabel?.textColor = .white
+        self.setTitle(text, for: .normal)
+        
 
 
     }
   
+    
+    
     private func setUp() {
         self.backgroundColor = maincolor
 
@@ -33,7 +35,7 @@ class ColorButton: UIButton {
         
     }
 }
-class whiteButton: UIButton {
+class WhiteButton: UIButton {
     
     
     init() {
@@ -45,8 +47,9 @@ class whiteButton: UIButton {
     }
     
     func setTitle(text: String) {
-        self.setTitle("", for: .normal)
-        self.titleLabel?.textColor = maincolor
+        self.setTitle(text, for: .normal)
+
+        self.setTitleColor(maincolor, for: .normal)
 
 
     }

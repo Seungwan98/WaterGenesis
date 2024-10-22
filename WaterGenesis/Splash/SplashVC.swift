@@ -73,13 +73,33 @@ extension SplashVC: PermissionPopUpDelegate {
     func permissionallowbtnpressed() {
 //        UserDefaults.standard.set(false, forKey: userstandard.setpermissionpopup.rawValue)
         
-        let firstVC = UINavigationController(rootViewController: MainVC())
-        firstVC.view.backgroundColor = .white
-        let secondVC = UINavigationController(rootViewController: ViewController())
-        let thirdVC = UINavigationController(rootViewController: ScannerViewController()) //스캐너
-        let fourthVC = UINavigationController(rootViewController: MyPageVC()) //마이페이지
+ 
+        let mainView = MainVC()
+        // pointView.presenter = PointPresenter(view: pointView)
+        
+        let pointView = PointVC()
+        pointView.presenter = PointPresenter(view: pointView)
+        
+        let scannerView =  ScannerViewController()
+        scannerView.presenter  = ScannerPresenter(view: scannerView)
+        
+        let MyPageView =  MyPageVC()
+        
+        let firstVC = UINavigationController(rootViewController: mainView)
+        
+        let secondVC = UINavigationController(rootViewController: pointView)
+
+        let thirdVC = UINavigationController(rootViewController: scannerView) // 스캐너
+               
+        let fourthVC = UINavigationController(rootViewController: MyPageView) // 마이페이지
+        
+        
         
         let tabBarController = UITabBarController()
+        firstVC.view.backgroundColor = .white
+        secondVC.view.backgroundColor = .white
+        thirdVC.view.backgroundColor = .white
+        fourthVC.view.backgroundColor = .white
         tabBarController.setViewControllers([firstVC, secondVC, thirdVC, fourthVC], animated: true)
         
         self.navigationController?.viewControllers = [tabBarController]

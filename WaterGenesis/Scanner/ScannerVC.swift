@@ -11,28 +11,40 @@ import SnapKit
 import Then
 import Vision
 
-class ScannerViewController: UIViewController {
+protocol ScannerView: AnyObject {
+    func endedScanned(result: Bool)
+}
+
+class ScannerViewController: UIViewController, ScannerView {
+    func endedScanned(result: Bool) {
+        print("성공 실패")
+    }
     
-    lazy private var btnstack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [flashlightbtn, helpbtn])
-        stack.axis = .horizontal
-        stack.distribution = .fillEqually
-        stack.spacing = 60
-        return stack
-    }()
+    var presenter: ScannerPresenter?
+    
+    private let focusImage = UIImageView(image: UIImage(named: "focus"))
+    
+    lazy private var btnstack = UIStackView(arrangedSubviews: [flashlightbtn, helpbtn]).then {
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
+        $0.spacing = 60
+    }
     
 
-    private var fillLayer = CAShapeLayer()
     
     
     
-    private var flashlightbtn = UIButton()
+    private var flashlightbtn = UIButton().then {
+        
+        $0.isSelected = false
+        $0.setImage(UIImage(named: "flashlight"), for: .normal)
+        $0.setImage(UIImage(named: "flashlightoff"), for: .selected)
+    }
     
-    private var camerachangebtn = UIButton()
+    private var helpbtn = UIButton().then {
+        $0.setImage(UIImage(named: "helpbtn"), for: .normal)
+    }
     
-    private var helpbtn = UIButton()
-    
-    private var settingbtn = UIButton()
     
     
 
@@ -46,83 +58,120 @@ class ScannerViewController: UIViewController {
         $0.text = "infolabel_scanner"
     }
     
-    private var smartlensbtn = ScannerBtn()
-    
-    private var barcodelensbtn = ScannerBtn()
-    
-    lazy private var scannerbtnstack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [smartlensbtn, barcodelensbtn])
-        stack.axis = .horizontal
-        stack.alignment = .center
-        stack.distribution = .fillEqually
-        return stack
-    }()
-    
-    
-    lazy private var infopopup = ScannerUsePopUp(frame: self.view.frame)
-    
-    
-    var codeFrameView = UIView().then {
-        $0.layer.borderColor = UIColor.green.cgColor
-        $0.layer.borderWidth = 2
-        $0.layer.cornerRadius = 8
-        $0.clipsToBounds = true
-        $0.isHidden = true
+
+    lazy private var infopopup = ScannerUsePopUp(frame: self.view.frame).then {
+        $0.alpha = 0
     }
     
-    var codeStringLabel = UILabel().then {
-        $0.font = .boldSystemFont(ofSize: 12)
-        $0.numberOfLines = 0
-        $0.textColor = .green
-        $0.isHidden = true
-        
-    }
+ 
     
+  
+    
+    let videoOutput = AVCaptureVideoDataOutput()
+    var input: AVCaptureDeviceInput?
+    var previewLayer = AVCaptureVideoPreviewLayer()
+    let session = AVCaptureSession()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .clear
-        
-        
-        
+        self.view.addSubview(focusImage)
+        focusImage.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(220)
        
+        }
+        focusImage.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
 
-        makebtnstack()
-        makeinfolabel()
+  
+        self.view.addSubview(infopopup)
         
         helpbtn.addTarget(self, action: #selector(infobtnpressed(sender:)), for: .touchUpInside)
         flashlightbtn.addTarget(self, action: #selector(flashlighbtnpressed(sender:)), for: .touchUpInside)
         
-        self.view.addSubview(infopopup)
-        infopopup.alpha = 0
-        makescannerbtnstack()
-       
-   
+        self.previewLayer = AVCaptureVideoPreviewLayer(session: self.session)
 
-        view.addSubview(codeFrameView)
-        view.addSubview(codeStringLabel)
+        setPreviewLayer(previewLayer: previewLayer)
+
+        makebtnstack()
+        setCamera()
+
+
+        self.startSession()
+        self.view.bringSubviewToFront(focusImage)
+
         
     }
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    
+    func startSession() {
+        DispatchQueue.global(qos: .background).async {
+            self.session.startRunning()
+
+        }
+    }
+    func stopSession() {
+        DispatchQueue.global(qos: .background).async {
+            self.session.stopRunning()
+
+        }
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    
+    private func makebtnstack() {
+        self.view.addSubview(btnstack)
+        self.view.addSubview(infolabel)
+
+    
         
-        somelayer()
-        
+ 
+        self.btnstack.snp.makeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(10)
+            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.height.equalTo(30)
+            
+        }
+
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    func setCamera() {
         
         
+        guard let device = AVCaptureDevice.default( .builtInWideAngleCamera, for: AVMediaType.video, position: .back) else {
+            print("device failed.")
+            return
+        }
+        
+        do {
+            input = try AVCaptureDeviceInput.init(device: device)
+            
+        } catch {
+            print("device input failed")
+        }
+        guard let inputdone = input else {
+            print("input failed")
+            return
+        }
+        session.addInput(inputdone)
+
+        if session.canAddOutput(videoOutput) {
+            let metaOutput = AVCaptureMetadataOutput()
+            
+            metaOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+
+            session.addOutput(metaOutput)
+            
+            metaOutput.metadataObjectTypes = [.qr]
+        }
+    }
+
+    
+    func setPreviewLayer(previewLayer: AVCaptureVideoPreviewLayer) {
+        previewLayer.frame = self.view.bounds
+        self.previewLayer = previewLayer
+        self.view.layer.addSublayer(previewLayer)
     }
 
     @objc func infobtnpressed(sender: UIButton) {
@@ -160,129 +209,36 @@ class ScannerViewController: UIViewController {
     
 }
 
-extension ScannerViewController {
-  
-
-  
-    
-}
-
-
-
-// layouts
-extension ScannerViewController {
-    
- 
-    
-    private func makebtnstack() {
-        self.view.addSubview(btnstack)
+extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         
-        
-        //  snp 추가
-        self.btnstack.snp.makeConstraints {
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(10)
-            $0.leading.trailing.equalToSuperview().inset(30)
-            $0.height.equalTo(30)
-            
-            
-        }
+      
+        var detectionString: String?
+        let barCodeType = AVMetadataObject.ObjectType.qr
         
         
         
         
-        flashlightbtn.isSelected = false
-        flashlightbtn.setImage(UIImage(named: "flashlight"), for: .normal)
-        flashlightbtn.setImage(UIImage(named: "flashlightoff"), for: .selected)
-        camerachangebtn.setImage(UIImage(named: "camerachangebtn"), for: .normal)
-        helpbtn.setImage(UIImage(named: "helpbtn"), for: .normal)
-        settingbtn.setImage(UIImage(named: "settingbtn"), for: .normal)
-        
-        camerachangebtn.isSelected = true
-        
-        
-        
-    }
-    
-    
+        if let metadata = metadataObjects.first {
    
-    private func makeinfolabel() {
-        self.view.addSubview(infolabel)
-        
-       
-        
-        
-        
-        
-        
-        
-        
-    }
-    
-    private func makescannerbtnstack() {
-        self.view.addSubview(scannerbtnstack)
-        
-        
-        smartlensbtn.setlabel(label: "smartlens_scanner")
-        smartlensbtn.isSelected = false
-        
-        barcodelensbtn.setlabel(label: "barcodelens_scanner")
-        barcodelensbtn.isSelected = true
-        
-        self.scannerbtnstack.snp.makeConstraints {
-            $0.centerX.equalTo(self.view.safeAreaLayoutGuide)
-            $0.top.equalTo(self.btnstack.snp.bottom).offset(10)
-            $0.height.equalTo(80)
-            $0.width.equalTo(200)
+
+            if metadata.type == barCodeType {
+             
+                if let qrCodeObject = self.previewLayer.transformedMetadataObject(for: metadata) as? AVMetadataMachineReadableCodeObject {
+                    
+                    detectionString = qrCodeObject.stringValue
+                
+                if let code = detectionString {
+                    presenter?.getQrCode(codeText: code)
+                }
+            }
+                
+            }
         }
         
-    }
-    
-    
-}
-
-// camera modules
-extension ScannerViewController {
-    
-    func getVideoOrientation() -> AVCaptureVideoOrientation {
-        let deviceOrientation = UIDevice.current.orientation
-        switch deviceOrientation {
-        case .portrait:
-            return .portrait
-        case .landscapeRight:
-            return .landscapeLeft
-        case .landscapeLeft:
-            return .landscapeRight
-        case .portraitUpsideDown:
-            return .portraitUpsideDown
-        default:
-            return .portrait
-        }
-    }
-    
-    
-
-    
-    
- 
-    
-  
-
-    
-    
-    func somelayer() {
-        
-        let pathBigRect = UIBezierPath(rect: self.view.bounds)
-        //         let pathSmallRect = UIBezierPath(rect: CGRect(x: self.view.bounds.midX - 100, y: self.view.bounds.midY - 100, width: 200, height: 200))
-        //
-        //         pathBigRect.append(pathSmallRect)
-        //         pathBigRect.usesEvenOddFillRule = true
         
         
-        fillLayer.path = pathBigRect.cgPath
-        fillLayer.fillRule = CAShapeLayerFillRule.evenOdd
-        fillLayer.fillColor = UIColor.black.withAlphaComponent(0.2).cgColor
-        // fillLayer.opacity = 0.4
-        view.layer.addSublayer(fillLayer)
+        
     }
     
     

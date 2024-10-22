@@ -10,7 +10,7 @@ import Then
 import SnapKit
 class MyPageVC: UIViewController {
     
-    let treesSize : [CGSize] = [CGSize( width: 41, height: 131), CGSize(width: 98, height: 100), CGSize( width: 76, height: 140), CGSize(width: 110, height: 120), CGSize( width: 180, height: 160)]
+    let treesSize: [CGSize] = [CGSize( width: 41, height: 131), CGSize(width: 98, height: 100), CGSize( width: 76, height: 140), CGSize(width: 110, height: 120), CGSize( width: 180, height: 160)]
     
     let treeImageView = UIImageView()
     
@@ -170,7 +170,7 @@ class MyPageVC: UIViewController {
         profileShadow.snp.makeConstraints {
             
             $0.height.equalTo(getWidth(width: 240))
-            $0.width.equalTo(getWidth(width: 328))
+            $0.leading.trailing.equalToSuperview().inset(24)
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.centerX.equalToSuperview()
         }

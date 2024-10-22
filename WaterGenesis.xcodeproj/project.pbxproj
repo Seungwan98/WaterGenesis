@@ -55,6 +55,9 @@
 		06B42E522CC68DCE00F1463F /* ScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B42E512CC68DCB00F1463F /* ScannerVC.swift */; };
 		06B42E542CC68E3800F1463F /* ScannerBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B42E532CC68E3400F1463F /* ScannerBtn.swift */; };
 		06B42E572CC68F5200F1463F /* ScannerUsePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B42E562CC68F4A00F1463F /* ScannerUsePopUp.swift */; };
+		06B42E592CC7715A00F1463F /* ScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B42E582CC7715100F1463F /* ScannerPresenter.swift */; };
+		06B42E5D2CC77CD400F1463F /* DecriptAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B42E5C2CC77CC800F1463F /* DecriptAES.swift */; };
+		06CB934C2CC7983900F774B1 /* PointPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB934B2CC7964000F774B1 /* PointPresenter.swift */; };
 		607F45F52CC386DD000A3C04 /* CustomWnH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F42CC386DD000A3C04 /* CustomWnH.swift */; };
 		607F45FA2CC3ABDD000A3C04 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F92CC3ABDD000A3C04 /* MainVC.swift */; };
 		607F46002CC3B6B8000A3C04 /* homeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 607F45FD2CC3B6B8000A3C04 /* homeIcon.png */; };
@@ -116,6 +119,9 @@
 		06B42E512CC68DCB00F1463F /* ScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerVC.swift; sourceTree = "<group>"; };
 		06B42E532CC68E3400F1463F /* ScannerBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerBtn.swift; sourceTree = "<group>"; };
 		06B42E562CC68F4A00F1463F /* ScannerUsePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerUsePopUp.swift; sourceTree = "<group>"; };
+		06B42E582CC7715100F1463F /* ScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerPresenter.swift; sourceTree = "<group>"; };
+		06B42E5C2CC77CC800F1463F /* DecriptAES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecriptAES.swift; sourceTree = "<group>"; };
+		06CB934B2CC7964000F774B1 /* PointPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointPresenter.swift; sourceTree = "<group>"; };
 		607F45F42CC386DD000A3C04 /* CustomWnH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWnH.swift; sourceTree = "<group>"; };
 		607F45F92CC3ABDD000A3C04 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		607F45FD2CC3B6B8000A3C04 /* homeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeIcon.png; sourceTree = "<group>"; };
@@ -143,20 +149,19 @@
 		061058AD2CC1F50100426D64 /* WaterGenesis */ = {
 			isa = PBXGroup;
 			children = (
-				06B42E552CC68F4100F1463F /* Scanner */,
+				06B42E5B2CC77CAC00F1463F /* Services */,
 				061058CA2CC2085A00426D64 /* Sorce */,
 				061058BE2CC1FDDF00426D64 /* Custom */,
 				061058BB2CC1FCD900426D64 /* Extension */,
-				061058B92CC1FB6900426D64 /* PaddingPanel.swift */,
-				061058B72CC1FB3C00426D64 /* PermissionPopUp.swift */,
-				061058B52CC1FB1B00426D64 /* SplashVC.swift */,
-				607F45F92CC3ABDD000A3C04 /* MainVC.swift */,
-				06B42E342CC6398200F1463F /* PointVC.swift */,
+				06CB93482CC7932100F774B1 /* Splash */,
+				06B42E552CC68F4100F1463F /* Scanner */,
+				06CB93492CC795FB00F774B1 /* Main */,
+				06CB934A2CC7961400F774B1 /* Point */,
 				06B42E3A2CC6512D00F1463F /* MyPageVC.swift */,
-				061058A42CC1F50100426D64 /* AppDelegate.swift */,
 				061058A52CC1F50100426D64 /* Assets.xcassets */,
 				061058A62CC1F50100426D64 /* Info.plist */,
 				061058A82CC1F50100426D64 /* LaunchScreen.storyboard */,
+				061058A42CC1F50100426D64 /* AppDelegate.swift */,
 				061058AB2CC1F50100426D64 /* SceneDelegate.swift */,
 				061058AC2CC1F50100426D64 /* ViewController.swift */,
 			);
@@ -174,6 +179,7 @@
 		061058BE2CC1FDDF00426D64 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				061058B92CC1FB6900426D64 /* PaddingPanel.swift */,
 				06B42E442CC6747D00F1463F /* Stoke.swift */,
 				06B42E322CC62E0F00F1463F /* ColorButton.swift */,
 				061058C22CC1FF9900426D64 /* IndicatorView.swift */,
@@ -286,11 +292,54 @@
 		06B42E552CC68F4100F1463F /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
-				06B42E532CC68E3400F1463F /* ScannerBtn.swift */,
+				06B42E582CC7715100F1463F /* ScannerPresenter.swift */,
 				06B42E512CC68DCB00F1463F /* ScannerVC.swift */,
-				06B42E562CC68F4A00F1463F /* ScannerUsePopUp.swift */,
+				06B42E5A2CC77B5800F1463F /* ex */,
 			);
 			path = Scanner;
+			sourceTree = "<group>";
+		};
+		06B42E5A2CC77B5800F1463F /* ex */ = {
+			isa = PBXGroup;
+			children = (
+				06B42E532CC68E3400F1463F /* ScannerBtn.swift */,
+				06B42E562CC68F4A00F1463F /* ScannerUsePopUp.swift */,
+			);
+			path = ex;
+			sourceTree = "<group>";
+		};
+		06B42E5B2CC77CAC00F1463F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				06B42E5C2CC77CC800F1463F /* DecriptAES.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		06CB93482CC7932100F774B1 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				061058B52CC1FB1B00426D64 /* SplashVC.swift */,
+				061058B72CC1FB3C00426D64 /* PermissionPopUp.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		06CB93492CC795FB00F774B1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				607F45F92CC3ABDD000A3C04 /* MainVC.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		06CB934A2CC7961400F774B1 /* Point */ = {
+			isa = PBXGroup;
+			children = (
+				06CB934B2CC7964000F774B1 /* PointPresenter.swift */,
+				06B42E342CC6398200F1463F /* PointVC.swift */,
+			);
+			path = Point;
 			sourceTree = "<group>";
 		};
 		2035CD71C7E261E68DDBC1DD /* Pods */ = {
@@ -487,12 +536,15 @@
 				607F45FA2CC3ABDD000A3C04 /* MainVC.swift in Sources */,
 				061058C32CC1FFA200426D64 /* IndicatorView.swift in Sources */,
 				061058C12CC1FDF500426D64 /* ShadowView.swift in Sources */,
+				06CB934C2CC7983900F774B1 /* PointPresenter.swift in Sources */,
 				061058B62CC1FB1F00426D64 /* SplashVC.swift in Sources */,
 				061058AF2CC1F50100426D64 /* SceneDelegate.swift in Sources */,
 				06B42E3B2CC6513B00F1463F /* MyPageVC.swift in Sources */,
+				06B42E592CC7715A00F1463F /* ScannerPresenter.swift in Sources */,
 				06B42E2A2CC5F98800F1463F /* UIFont+.swift in Sources */,
 				06B42E282CC5F8ED00F1463F /* WDFont.swift in Sources */,
 				607F45F52CC386DD000A3C04 /* CustomWnH.swift in Sources */,
+				06B42E5D2CC77CD400F1463F /* DecriptAES.swift in Sources */,
 				06B42E352CC6398400F1463F /* PointVC.swift in Sources */,
 				061058B02CC1F50100426D64 /* AppDelegate.swift in Sources */,
 				06B42E452CC6748100F1463F /* Stoke.swift in Sources */,
@@ -525,6 +577,7 @@
 				DEVELOPMENT_TEAM = YH4A87H8M4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WaterGenesis/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "휴대전화의 카메라로 QR 코드 캔을 위해 카메라 허용이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -555,6 +608,7 @@
 				DEVELOPMENT_TEAM = YH4A87H8M4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WaterGenesis/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "휴대전화의 카메라로 QR 코드 캔을 위해 카메라 허용이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";

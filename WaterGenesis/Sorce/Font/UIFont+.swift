@@ -43,7 +43,7 @@ extension UIFont {
                 case "CTFontObliqueUsage":
                     fontName = AppFontName.italic
                 default:
-                    fontName = AppFontName.italic
+                    fontName = AppFontName.regular
                 }
                 self.init(name: fontName, size: fontDescriptor.pointSize)!
             }

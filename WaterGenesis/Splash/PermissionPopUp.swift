@@ -131,7 +131,7 @@ class PermissionPopUp: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         DispatchQueue.main.async { [unowned self] in
-            self.box.layer.cornerRadius = 20
+            self.box.roundCorners(corners: [.allCorners], radius: 20)
             self.allowbtn.roundCorners(corners: [.bottomRight, .bottomLeft], radius: 20)
         }
     }

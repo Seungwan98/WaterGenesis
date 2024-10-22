@@ -16,17 +16,22 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     let contentView = UIView()
     
     
-    let face = UIImageView(image: UIImage(named: "face")).then {
+    let face = UIImageView(image: UIImage(systemName: "person.circle.fill")).then {
         $0.contentMode = .scaleAspectFill
+        $0.tintColor = .lightGray
     }
     let welcome = UILabel().then {
         $0.text = "안녕하세요, 노혜인님!"
         $0.numberOfLines = 0
-        $0.font = .boldSystemFont(ofSize: 22)
+        $0.font = .boldSystemFont(ofSize: 24)
     }
     let pointInform = UILabel().then {
         $0.text = "노혜인님의 탄소 포인트"
-        $0.font = .boldSystemFont(ofSize: 22)
+        $0.font = WDFont.medium(size: 20)
+    }
+    let point = UILabel().then {
+        $0.text = "350 P"
+        $0.font = WDFont.bold(size: 38)
     }
 
     let topView = ShadowView().then {
@@ -48,6 +53,13 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     } 
     
     let leaves = UIImageView(image: UIImage(named: "leaves"))
+    let detailBtn = WhiteButton().then {
+        $0.setTitle(text: "상세")
+        $0.layer.cornerRadius = 15
+        $0.titleLabel?.font = WDFont.bold(size: 14)
+        $0.layer.borderColor = maincolor.cgColor
+        $0.layer.borderWidth = 1
+    }
     
     let bottomView = ShadowView().then {
         $0.shadowcolor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 0.8)
@@ -60,7 +72,7 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     }
     let guide = UILabel().then {
         $0.text = "사용법"
-        $0.font = WDFont.medium(size: 18)
+        $0.font = WDFont.medium(size: 20)
         
     }
     let layerScrollView = UIScrollView().then {
@@ -117,7 +129,11 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     
     var layerViews = [UIView(), UIView(), UIView()]
     
-    var imageRects = [CGSize(width: getWidth(width: 190), height: getHeight(height: 106)),CGSize(width: getWidth(width: 140), height: getHeight(height: 117)), CGSize(width: getWidth(width: 122.5), height: getHeight(height: 113.5))]
+    var labels = [UILabel(), UILabel(), UILabel()]
+    
+    var imageRects = [CGSize(width: 190, height: 106),CGSize(width: 140, height: 117), CGSize(width:122.5, height: 113.5)]
+    
+    var labelsText = ["컵을 거꾸로 10초간 꾹 누르기", "카메라 실행 후 스캔", "포인트 적립 완료 !"]
     
     var pageControl = UIPageControl().then {
         $0.numberOfPages = 3
@@ -129,8 +145,13 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     
     func setImageViews() {
         DispatchQueue.main.async {
+            
+            
 
             for i in 0..<self.layerViews.count {
+                
+                self.labels[i].text = self.labelsText[i]
+                self.labels[i].font = WDFont.bold(size: 14)
                 
                 
                 let xPos = self.layerScrollView.frame.width * CGFloat(i)
@@ -148,10 +169,19 @@ class MainVC: UIViewController, UIScrollViewDelegate {
                 image.image = UIImage(named: "Layer_1-\(count)")
          
                 self.layerViews[count].addSubview(self.imageViews[count])
+                self.layerViews[count].addSubview(self.labels[count])
                 self.imageViews[count].snp.makeConstraints {
                     $0.width.height.equalTo(self.imageRects[count])
-                    $0.center.equalTo(self.layerViews[count])
+                    $0.centerX.equalTo(self.layerViews[count])
+                    $0.centerY.equalToSuperview().offset(-10)
                 }
+                
+                self.labels[count].snp.makeConstraints {
+                    $0.centerX.equalTo(self.layerViews[count])
+                    $0.bottom.equalTo(self.layerViews[count].snp.bottom).inset(20)
+                }
+                
+               
                 
                 }
         }
@@ -193,6 +223,8 @@ class MainVC: UIViewController, UIScrollViewDelegate {
         self.contentView.addSubview(self.middleView)
         self.middleView.addSubview(self.pointInform)
         self.middleView.addSubview(self.leaves)
+        self.middleView.addSubview(self.point)
+        self.middleView.addSubview(self.detailBtn)
         
         self.contentView.addSubview(self.bottomView)
         self.bottomView.addSubview(self.layerScrollView)
@@ -213,36 +245,36 @@ class MainVC: UIViewController, UIScrollViewDelegate {
         
         contentView.snp.makeConstraints {
             $0.top.bottom.leading.trailing.width.equalToSuperview()
-            $0.height.equalTo(getHeight(height: 590))
+            $0.height.equalTo(self.view.safeAreaLayoutGuide.snp.height)
+            
         }
      
         
         topView.snp.makeConstraints {
-            $0.width.equalTo(getWidth(width: 326))
-            $0.height.equalTo(getHeight(height: 109))
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(110)
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview()
+            $0.top.equalToSuperview().inset(10)
         }
         face.snp.makeConstraints {
-            $0.width.equalTo(getWidth(width: 82))
-            $0.height.equalTo(getHeight(height: 82))
-            $0.top.equalToSuperview().inset(getHeight(height: 11))
-            $0.leading.equalToSuperview().inset(getHeight(height: 29))
+            $0.width.height.equalTo(80)
+            $0.centerY.equalToSuperview().inset(getHeight(height: 11))
+            $0.leading.equalToSuperview().inset(58)
         }
         welcome.snp.makeConstraints {
             $0.width.equalTo(getWidth(width: 156))
             $0.height.equalTo(getHeight(height: 64))
-            $0.leading.equalTo(face.snp.trailing).offset(getWidth(width: 29))
+            $0.leading.equalTo(face.snp.trailing).offset(38)
             $0.centerY.equalTo(face)
         }
         
         
         
         middleView.snp.makeConstraints {
-            $0.width.equalTo(getWidth(width: 324))
-            $0.height.equalTo(getHeight(height: 166))
+            $0.leading.trailing.equalToSuperview().inset(24)
+            $0.height.equalTo(190)
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(topView.snp.bottom).offset(getHeight(height: 30))
+            $0.top.equalTo(topView.snp.bottom).offset(24)
 
         }
         pointInform.snp.makeConstraints {
@@ -250,10 +282,21 @@ class MainVC: UIViewController, UIScrollViewDelegate {
             $0.centerX.equalToSuperview()
         }
         leaves.snp.makeConstraints {
-            $0.leading.equalTo(getWidth(width: 98))
-            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview().inset(120)
+            $0.centerY.equalToSuperview().offset(4)
             $0.width.equalTo(getWidth(width: 18.67))
             $0.height.equalTo(getHeight(height: 33.7))
+        }
+        
+        point.snp.makeConstraints {
+            $0.leading.equalTo(leaves.snp.trailing).offset(10)
+            $0.centerY.equalTo(leaves)
+        }
+        detailBtn.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(18)
+            $0.bottom.equalToSuperview().offset(-18)
+            $0.width.equalTo(60)
+            $0.height.equalTo(30)
         }
         
         guide.snp.makeConstraints {
@@ -262,8 +305,8 @@ class MainVC: UIViewController, UIScrollViewDelegate {
         }
         
         bottomView.snp.makeConstraints {
-            $0.width.equalTo(getWidth(width: 282))
-            $0.height.equalTo(220)
+            $0.width.equalTo(340)
+            $0.height.equalTo(240)
             $0.centerX.equalToSuperview()
             $0.top.equalTo(middleView.snp.bottom).offset(getHeight(height: 50))
 
