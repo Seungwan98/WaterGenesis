@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.10.0)
+  - FSCalendar (2.8.4)
   - Kingfisher (8.1.0)
   - RxCocoa (6.8.0):
     - RxRelay (= 6.8.0)
@@ -13,6 +14,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - FSCalendar
   - Kingfisher
   - RxCocoa
   - RxSwift
@@ -23,6 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FSCalendar
     - Kingfisher
     - RxCocoa
     - RxRelay
@@ -33,6 +36,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: cd0b98508df05796dd2ff278f3bb055a631b5390
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   Kingfisher: dfbf20b6249ed4ef6f18d6a96c847bce860bdb95
   RxCocoa: 2d33c1e1e5d66492052ad46b11024ae287572880
   RxRelay: 335c78b926a2aea8d863a6d25f1ed3b5ad8e8705
@@ -41,6 +45,6 @@ SPEC CHECKSUMS:
   SwiftLint: eb47480d47c982481592c195c221d11013a679cc
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 0a4a21651f9877247f01ec17efe350972075a313
+PODFILE CHECKSUM: 30041946d642752314fe8069485aeb59284e9c8d
 
 COCOAPODS: 1.15.2

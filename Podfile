@@ -13,4 +13,5 @@ pod 'RxCocoa'
 pod 'SnapKit'
 pod 'Then'
 pod 'SwiftLint'
+pod 'FSCalendar'
 end
