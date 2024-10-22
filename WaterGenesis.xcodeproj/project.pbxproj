@@ -58,6 +58,8 @@
 		06B42E592CC7715A00F1463F /* ScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B42E582CC7715100F1463F /* ScannerPresenter.swift */; };
 		06B42E5D2CC77CD400F1463F /* DecriptAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B42E5C2CC77CC800F1463F /* DecriptAES.swift */; };
 		06CB934C2CC7983900F774B1 /* PointPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB934B2CC7964000F774B1 /* PointPresenter.swift */; };
+		603898EE2CC7E63D00ABE512 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 603898ED2CC7E63D00ABE512 /* calendar.png */; };
+		603898F02CC7E73900ABE512 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898EF2CC7E73900ABE512 /* CalendarView.swift */; };
 		607F45F52CC386DD000A3C04 /* CustomWnH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F42CC386DD000A3C04 /* CustomWnH.swift */; };
 		607F45FA2CC3ABDD000A3C04 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F92CC3ABDD000A3C04 /* MainVC.swift */; };
 		607F46002CC3B6B8000A3C04 /* homeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 607F45FD2CC3B6B8000A3C04 /* homeIcon.png */; };
@@ -122,6 +124,8 @@
 		06B42E582CC7715100F1463F /* ScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerPresenter.swift; sourceTree = "<group>"; };
 		06B42E5C2CC77CC800F1463F /* DecriptAES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecriptAES.swift; sourceTree = "<group>"; };
 		06CB934B2CC7964000F774B1 /* PointPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointPresenter.swift; sourceTree = "<group>"; };
+		603898ED2CC7E63D00ABE512 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = trees/calendar.png; sourceTree = "<group>"; };
+		603898EF2CC7E73900ABE512 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		607F45F42CC386DD000A3C04 /* CustomWnH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWnH.swift; sourceTree = "<group>"; };
 		607F45F92CC3ABDD000A3C04 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		607F45FD2CC3B6B8000A3C04 /* homeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeIcon.png; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				061058C22CC1FF9900426D64 /* IndicatorView.swift */,
 				061058C02CC1FDF200426D64 /* ShadowView.swift */,
 				607F45F42CC386DD000A3C04 /* CustomWnH.swift */,
+				603898EF2CC7E73900ABE512 /* CalendarView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				06B42E462CC683A900F1463F /* trees */,
+				603898ED2CC7E63D00ABE512 /* calendar.png */,
 				06B42E3E2CC657B300F1463F /* megaphone.png */,
 				06B42E3F2CC657B300F1463F /* FAQ.png */,
 				06B42E402CC657B300F1463F /* phone.png */,
@@ -451,6 +457,7 @@
 				061058B22CC1F50100426D64 /* Assets.xcassets in Resources */,
 				061058C72CC2085500426D64 /* cameraIcon.png in Resources */,
 				061058C82CC2085500426D64 /* notiIcon.png in Resources */,
+				603898EE2CC7E63D00ABE512 /* calendar.png in Resources */,
 				061058C92CC2085500426D64 /* pictureIcon.png in Resources */,
 				607F46062CC42396000A3C04 /* face.png in Resources */,
 				064B33432CC1F45100EB00A6 /* .swiftlint.yml in Resources */,
@@ -528,6 +535,7 @@
 			files = (
 				061058B82CC1FB4700426D64 /* PermissionPopUp.swift in Sources */,
 				061058AE2CC1F50100426D64 /* ViewController.swift in Sources */,
+				603898F02CC7E73900ABE512 /* CalendarView.swift in Sources */,
 				061058BA2CC1FB6C00426D64 /* PaddingPanel.swift in Sources */,
 				06B42E572CC68F5200F1463F /* ScannerUsePopUp.swift in Sources */,
 				06B42E522CC68DCE00F1463F /* ScannerVC.swift in Sources */,
