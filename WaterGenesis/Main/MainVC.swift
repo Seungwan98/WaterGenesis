@@ -131,7 +131,7 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     
     var labels = [UILabel(), UILabel(), UILabel()]
     
-    var imageRects = [CGSize(width: 190, height: 106),CGSize(width: 140, height: 117), CGSize(width:122.5, height: 113.5)]
+    var imageRects = [CGSize(width: 190, height: 106),CGSize(width: 140, height: 117), CGSize(width: 122.5, height: 113.5)]
     
     var labelsText = ["컵을 거꾸로 10초간 꾹 누르기", "카메라 실행 후 스캔", "포인트 적립 완료 !"]
     
@@ -280,17 +280,18 @@ class MainVC: UIViewController, UIScrollViewDelegate {
             $0.top.equalToSuperview().inset(getHeight(height: 26))
             $0.centerX.equalToSuperview()
         }
+        point.snp.makeConstraints {
+            $0.centerY.equalToSuperview().offset(10)
+            $0.centerX.equalToSuperview().offset(5)
+        }
         leaves.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(120)
-            $0.centerY.equalToSuperview().offset(4)
+            $0.trailing.equalTo(point.snp.leading).offset(-10)
+            $0.bottom.equalTo(point)
             $0.width.equalTo(getWidth(width: 18.67))
             $0.height.equalTo(getHeight(height: 33.7))
         }
         
-        point.snp.makeConstraints {
-            $0.leading.equalTo(leaves.snp.trailing).offset(10)
-            $0.centerY.equalTo(leaves)
-        }
+       
         detailBtn.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(18)
             $0.bottom.equalToSuperview().offset(-18)

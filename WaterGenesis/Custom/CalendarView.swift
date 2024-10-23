@@ -10,7 +10,7 @@ import FSCalendar
 
 protocol CalendarDelegate {
     
-    func getDate(date :Date)
+    func getDate(date: Date, tag: Int)
     
 }
 
@@ -153,7 +153,7 @@ class CalendarView: UIView, FSCalendarDelegate, FSCalendarDataSource, FSCalendar
     @objc
     func nextBtnTapped() {
         if let selectedDate = calendar.selectedDate {
-            delegate.getDate(date: selectedDate)
+            delegate.getDate(date: selectedDate, tag: self.tag)
         } else {
             print("err")
         }

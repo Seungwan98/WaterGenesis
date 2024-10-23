@@ -12,13 +12,18 @@ import SnapKit
 
 
 protocol PointView: AnyObject {
-    
+    func setLeft(date: String)
+    func setRight(date: String)
 }
 
-class PointVC: UIViewController, PointView {
+class PointVC: UIViewController {
+   
     
     
     var presenter: PointPresenter?
+    
+    let scrollView = UIScrollView()
+    let contentView = UIView()
     
     let manImage = UIImageView().then {
         $0.image = UIImage(named: "manCharactor.png")
@@ -51,10 +56,12 @@ class PointVC: UIViewController, PointView {
         $0.layer.cornerRadius = 20
     }
     
-    let leftCal = UIView()
-    let rightCal = UIView()
+    let leftCalBtn = UIView()
+    let rightCalBtn = UIView()
     
-    lazy var calStack = UIStackView(arrangedSubviews: [leftCal, rightCal]).then {
+    var labels = [UILabel]()
+    
+    lazy var calStack = UIStackView(arrangedSubviews: [leftCalBtn, rightCalBtn]).then {
         $0.spacing = 20
         $0.axis = .horizontal
         $0.distribution = .fillEqually
@@ -66,7 +73,7 @@ class PointVC: UIViewController, PointView {
         $0.titleLabel?.font = WDFont.bold(size: 20)
     }
 
-    let calendarView = ShadowView().then {
+    let leftCalendarView = ShadowView().then {
         $0.shadowcolor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 0.8)
         $0.shadowopacity = 1
         $0.shadowradius = 8
@@ -74,13 +81,26 @@ class PointVC: UIViewController, PointView {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 18
         
+        
+    } 
+    let rightCalendarView = ShadowView().then {
+        $0.shadowcolor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 0.8)
+        $0.shadowopacity = 1
+        $0.shadowradius = 8
+        $0.shadowoffset = CGSize(width: 0, height: 3)
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 18
+        
+        
     }
+    
+    var calendarConstraint: Constraint?
     
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        hideCalendar()
         setUI()
         setBottomView()
         setCalendarView()
@@ -105,18 +125,27 @@ class PointVC: UIViewController, PointView {
     }
     func setUI() {
         
+        self.view.addSubview(self.scrollView)
+        self.scrollView.addSubview(self.contentView)
         
-        self.view.addSubview(middleView)
-        self.view.addSubview(informlabel)
-        self.view.addSubview(manImage)
-        self.view.addSubview(pointIcon)
-        self.view.addSubview(pointInform)
+        self.contentView.addSubview(middleView)
+        self.contentView.addSubview(informlabel)
+        self.contentView.addSubview(manImage)
+        self.contentView.addSubview(pointIcon)
+        self.contentView.addSubview(pointInform)
 
-//        
-//        
-//        self.view.addSubview(self.scrollView)
-//        self.scrollView.addSubview(self.contentView)
        
+        
+        scrollView.snp.makeConstraints {
+            $0.top.bottom.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.top.bottom.leading.trailing.width.equalToSuperview()
+            $0.height.equalTo(800)
+            
+        }
+     
 
         middleView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(24)
@@ -127,7 +156,7 @@ class PointVC: UIViewController, PointView {
         informlabel.snp.makeConstraints {
             $0.height.equalTo(getHeight(height: 80))
             $0.leading.trailing.equalToSuperview().inset(22)
-            $0.top.equalTo(self.view.safeAreaLayoutGuide).inset(20)
+            $0.top.equalToSuperview().inset(20)
         }
         
         manImage.snp.makeConstraints {
@@ -152,8 +181,8 @@ class PointVC: UIViewController, PointView {
     }
     
     func setBottomView() {
-        self.view.addSubview(calStack)
-        self.view.addSubview(search)
+        self.contentView.addSubview(calStack)
+        self.contentView.addSubview(search)
     
         
 
@@ -172,12 +201,28 @@ class PointVC: UIViewController, PointView {
             
             let image = UIImageView(image: UIImage(named: "calendar"))
             let transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
-            image.transform = transform
             
+            let label = UILabel()
+            
+            label.font = WDFont.regular(size: 16)
+            label.text = "2025.01.05"
+            
+            labels.append(label)
+
+            
+            image.transform = transform
             stack.addSubview(image)
+            stack.addSubview(label)
+            
             image.snp.makeConstraints {
                 $0.centerY.equalToSuperview()
                 $0.trailing.equalToSuperview()
+                
+            } 
+            
+            label.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.leading.equalToSuperview().inset(8)
                 
             }
         }
@@ -200,27 +245,62 @@ class PointVC: UIViewController, PointView {
     }
     
     func setCalendarView() {
-        self.view.addSubview(calendarView)
-        let calendar = CalendarView(delegate: self)
-        
-        calendarView.addSubview(calendar)
-        
-        calendar.snp.makeConstraints {
-            $0.width.height.equalToSuperview()
+        let calArr = [leftCalendarView, rightCalendarView]
+
+    
+      
+        for i in 0..<calArr.count {
+            
+            calArr[i].isHidden = true
+            
+            let calendar = CalendarView(delegate: presenter!).then {
+                $0.tag = i
+                $0.layer.cornerRadius = 20
+            }
+            
+            calArr[i].addSubview(calendar)
+            self.contentView.addSubview(calArr[i])
+            
+            
+            
+            calendar.snp.makeConstraints {
+                
+                $0.width.height.equalToSuperview()
+            }
+            
+            
+            calArr[i].snp.makeConstraints {
+                $0.top.equalTo(calStack.snp.bottom).offset(4)
+                $0.width.height.equalTo(250)
+                
+            }
+            
+            
+            
+            
+            
         }
         
-        calendarView.snp.makeConstraints {
+        
+        
+        
+        
+        leftCalendarView.snp.makeConstraints {
             $0.leading.equalTo(calStack)
-            $0.top.equalTo(calStack.snp.bottom)
-            $0.width.height.equalTo(300)
         }
+        rightCalendarView.snp.makeConstraints {
+            $0.trailing.equalTo(calStack)
+        }
+       
      
     }
     
     @objc
     func calendarTapped(_ sender: UITapGestureRecognizer) {
+        
         if let tag = sender.view?.tag {
             if tag == 0 {
+                
                 pushleftCal()
             } else {
                 pushrightCal()
@@ -229,18 +309,48 @@ class PointVC: UIViewController, PointView {
     }
     
     func pushleftCal() {
+     
+        leftCalendarView.isHidden = false
+        rightCalendarView.isHidden = true
         
     }
     func pushrightCal() {
         
+           leftCalendarView.isHidden = true
+           rightCalendarView.isHidden = false
     }
   
 
 }
 
-extension PointVC: CalendarDelegate {
-    func getDate(date: Date) {
-        print("data")
+
+extension PointVC: PointView {
+    func setLeft(date: String) {
+        self.labels[0].text = date
+        self.leftCalendarView.isHidden = true
+        
     }
     
+    func setRight(date: String) {
+        self.labels[1].text = date
+        self.rightCalendarView.isHidden = true
+
+
+    }
+    
+}
+
+
+extension PointVC {
+    func hideCalendar() {
+            let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                     action: #selector(hide))
+            view.addGestureRecognizer(tap)
+       
+        }
+        
+       @objc func hide() {
+           self.leftCalendarView.isHidden = true
+           self.rightCalendarView.isHidden = true
+       }
 }
