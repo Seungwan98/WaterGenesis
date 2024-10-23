@@ -43,7 +43,7 @@ class PointVC: UIViewController {
     
     let informlabel = UILabel().then {
         $0.text = "노혜인님의\n일회용 컵 절감 215개"
-        $0.font = WDFont.bold(size: 28)
+        $0.font = WDFont.bold(size: 26)
         $0.numberOfLines = 0
     }
     
@@ -54,6 +54,31 @@ class PointVC: UIViewController {
         $0.shadowoffset = CGSize(width: 0, height: 3)
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 20
+    }
+    
+    lazy var mainStack = UIStackView(arrangedSubviews: [firstStack, secondStack]).then {
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.distribution = .fillEqually
+        
+        
+
+        
+    }
+    let firstStack = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
+        $0.alignment = .center
+
+    }
+    let secondStack = UIStackView().then {
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
+        $0.alignment = .center
+        
+
+
+
     }
     
     let leftCalBtn = UIView()
@@ -103,7 +128,9 @@ class PointVC: UIViewController {
         hideCalendar()
         setUI()
         setBottomView()
+        setStackView()
         setCalendarView()
+        
 
     }
 
@@ -123,10 +150,53 @@ class PointVC: UIViewController {
         
         
     }
+    
+    func setStackView() {
+        self.middleView.addSubview(self.mainStack)
+        let texts: [String] =  ["누적 스캔 횟수", "이달의 스캔 횟수", "보유 포인트"]
+        let textN = ["0", "5", "350"]
+       _ = texts.enumerated().map { count, text in
+           
+           let firstLabel = UILabel()
+           firstLabel.text = textN[count]
+           firstLabel.font = WDFont.bold(size: 24)
+           firstLabel.textAlignment = .center
+
+          
+           firstStack.addArrangedSubview(firstLabel)
+           
+         
+           
+           let secondLabel = UILabel()
+           secondLabel.text = text
+           secondLabel.textAlignment = .center
+           secondLabel.font = WDFont.regular(size: 12)
+           secondLabel.textColor = UIColor(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
+        
+           secondStack.addArrangedSubview(secondLabel)
+           
+           
+        }
+        
+        
+        
+        mainStack.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.bottom.equalToSuperview().inset(20)
+            
+        }
+  
+    
+        
+        
+    }
+    
     func setUI() {
         
         self.view.addSubview(self.scrollView)
         self.scrollView.addSubview(self.contentView)
+        
+  
         
         self.contentView.addSubview(middleView)
         self.contentView.addSubview(informlabel)
@@ -141,29 +211,28 @@ class PointVC: UIViewController {
         }
         
         contentView.snp.makeConstraints {
-            $0.top.bottom.leading.trailing.width.equalToSuperview()
-            $0.height.equalTo(800)
+            $0.top.bottom.leading.trailing.width.height.equalToSuperview()
             
         }
      
 
         middleView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(24)
-            $0.height.equalTo(getHeight(height: 100))
-            $0.top.equalTo(self.informlabel.snp.bottom).offset(28)
+            $0.height.equalTo(getHeight(height: 80))
+            $0.top.equalTo(self.informlabel.snp.bottom).offset(40)
             $0.centerX.equalToSuperview()
         }
         informlabel.snp.makeConstraints {
             $0.height.equalTo(getHeight(height: 80))
             $0.leading.trailing.equalToSuperview().inset(22)
-            $0.top.equalToSuperview().inset(20)
+            $0.top.equalToSuperview()
         }
         
         manImage.snp.makeConstraints {
             $0.width.equalTo(getHeight(height: 113.21))
             $0.height.equalTo(getHeight(height: 119))
             $0.trailing.equalTo(informlabel)
-            $0.bottom.equalTo(middleView.snp.top).offset(4)
+            $0.top.equalTo(informlabel)
         }
         pointIcon.snp.makeConstraints {
             $0.height.equalTo(getHeight(height: 30))
@@ -259,7 +328,7 @@ class PointVC: UIViewController {
             }
             
             calArr[i].addSubview(calendar)
-            self.contentView.addSubview(calArr[i])
+            self.view.addSubview(calArr[i])
             
             
             
@@ -271,7 +340,7 @@ class PointVC: UIViewController {
             
             calArr[i].snp.makeConstraints {
                 $0.top.equalTo(calStack.snp.bottom).offset(4)
-                $0.width.height.equalTo(250)
+                $0.width.height.equalTo(240)
                 
             }
             
@@ -345,7 +414,7 @@ extension PointVC {
     func hideCalendar() {
             let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
                                                                      action: #selector(hide))
-            view.addGestureRecognizer(tap)
+        self.contentView.addGestureRecognizer(tap)
        
         }
         

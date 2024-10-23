@@ -98,7 +98,7 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     @objc
     func rightBtnTapped() {
         if pageCount + 1 < 3 {
-            setPageControlSelectedPage(currentPage:  self.pageCount + 1)
+            setPageControlSelectedPage(currentPage: self.pageCount + 1)
             scrollToSelected(page: pageCount)
             
 
@@ -108,7 +108,7 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     @objc
     func leftBtnTapped() {
         if pageCount - 1 >= 0 {
-            setPageControlSelectedPage(currentPage:  self.pageCount - 1)
+            setPageControlSelectedPage(currentPage: self.pageCount - 1)
             scrollToSelected(page: pageCount)
 
 
@@ -119,6 +119,8 @@ class MainVC: UIViewController, UIScrollViewDelegate {
         
         setUI()
         
+        let textAttribute = TextColorAttribute.shared.colorize(text: "안녕하세요,\n노혜인님!", target: "노혜인", color: maincolor)
+        self.welcome.attributedText = textAttribute
         layerScrollView.delegate = self
         
         setImageViews()
@@ -131,7 +133,7 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     
     var labels = [UILabel(), UILabel(), UILabel()]
     
-    var imageRects = [CGSize(width: 190, height: 106),CGSize(width: 140, height: 117), CGSize(width: 122.5, height: 113.5)]
+    var imageRects = [CGSize(width: 190, height: 106), CGSize(width: 140, height: 117), CGSize(width: 122.5, height: 113.5)]
     
     var labelsText = ["컵을 거꾸로 10초간 꾹 누르기", "카메라 실행 후 스캔", "포인트 적립 완료 !"]
     
@@ -144,6 +146,8 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     }
     
     func setImageViews() {
+        
+        
         DispatchQueue.main.async {
             
             

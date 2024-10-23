@@ -60,6 +60,9 @@
 		06CB934C2CC7983900F774B1 /* PointPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB934B2CC7964000F774B1 /* PointPresenter.swift */; };
 		603898EE2CC7E63D00ABE512 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 603898ED2CC7E63D00ABE512 /* calendar.png */; };
 		603898F02CC7E73900ABE512 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898EF2CC7E73900ABE512 /* CalendarView.swift */; };
+		603898F42CC921DF00ABE512 /* MyPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898F32CC921DF00ABE512 /* MyPagePresenter.swift */; };
+		603898F62CC95FEF00ABE512 /* TextColorAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898F52CC95FEF00ABE512 /* TextColorAttribute.swift */; };
+		603898F82CC9626100ABE512 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898F72CC9626000ABE512 /* LoginVC.swift */; };
 		607F45F52CC386DD000A3C04 /* CustomWnH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F42CC386DD000A3C04 /* CustomWnH.swift */; };
 		607F45FA2CC3ABDD000A3C04 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F92CC3ABDD000A3C04 /* MainVC.swift */; };
 		607F46002CC3B6B8000A3C04 /* homeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 607F45FD2CC3B6B8000A3C04 /* homeIcon.png */; };
@@ -126,6 +129,9 @@
 		06CB934B2CC7964000F774B1 /* PointPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointPresenter.swift; sourceTree = "<group>"; };
 		603898ED2CC7E63D00ABE512 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = trees/calendar.png; sourceTree = "<group>"; };
 		603898EF2CC7E73900ABE512 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		603898F32CC921DF00ABE512 /* MyPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePresenter.swift; sourceTree = "<group>"; };
+		603898F52CC95FEF00ABE512 /* TextColorAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorAttribute.swift; sourceTree = "<group>"; };
+		603898F72CC9626000ABE512 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		607F45F42CC386DD000A3C04 /* CustomWnH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWnH.swift; sourceTree = "<group>"; };
 		607F45F92CC3ABDD000A3C04 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		607F45FD2CC3B6B8000A3C04 /* homeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeIcon.png; sourceTree = "<group>"; };
@@ -160,14 +166,15 @@
 				06CB93482CC7932100F774B1 /* Splash */,
 				06B42E552CC68F4100F1463F /* Scanner */,
 				06CB93492CC795FB00F774B1 /* Main */,
+				603898F22CC921BC00ABE512 /* MyPage */,
 				06CB934A2CC7961400F774B1 /* Point */,
-				06B42E3A2CC6512D00F1463F /* MyPageVC.swift */,
 				061058A52CC1F50100426D64 /* Assets.xcassets */,
 				061058A62CC1F50100426D64 /* Info.plist */,
 				061058A82CC1F50100426D64 /* LaunchScreen.storyboard */,
 				061058A42CC1F50100426D64 /* AppDelegate.swift */,
 				061058AB2CC1F50100426D64 /* SceneDelegate.swift */,
 				061058AC2CC1F50100426D64 /* ViewController.swift */,
+				603898F72CC9626000ABE512 /* LoginVC.swift */,
 			);
 			path = WaterGenesis;
 			sourceTree = "<group>";
@@ -190,6 +197,7 @@
 				061058C02CC1FDF200426D64 /* ShadowView.swift */,
 				607F45F42CC386DD000A3C04 /* CustomWnH.swift */,
 				603898EF2CC7E73900ABE512 /* CalendarView.swift */,
+				603898F52CC95FEF00ABE512 /* TextColorAttribute.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -363,6 +371,15 @@
 				06B42E2E2CC5FB1200F1463F /* Layer_1-2.png */,
 			);
 			path = IntroduceLayers;
+			sourceTree = "<group>";
+		};
+		603898F22CC921BC00ABE512 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				06B42E3A2CC6512D00F1463F /* MyPageVC.swift */,
+				603898F32CC921DF00ABE512 /* MyPagePresenter.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		8B31834E443874146752BE21 /* Frameworks */ = {
@@ -544,11 +561,13 @@
 				061058B82CC1FB4700426D64 /* PermissionPopUp.swift in Sources */,
 				061058AE2CC1F50100426D64 /* ViewController.swift in Sources */,
 				603898F02CC7E73900ABE512 /* CalendarView.swift in Sources */,
+				603898F42CC921DF00ABE512 /* MyPagePresenter.swift in Sources */,
 				061058BA2CC1FB6C00426D64 /* PaddingPanel.swift in Sources */,
 				06B42E572CC68F5200F1463F /* ScannerUsePopUp.swift in Sources */,
 				06B42E522CC68DCE00F1463F /* ScannerVC.swift in Sources */,
 				06B42E332CC62E1A00F1463F /* ColorButton.swift in Sources */,
 				061058BD2CC1FCEA00426D64 /* UIView+.swift in Sources */,
+				603898F62CC95FEF00ABE512 /* TextColorAttribute.swift in Sources */,
 				607F45FA2CC3ABDD000A3C04 /* MainVC.swift in Sources */,
 				061058C32CC1FFA200426D64 /* IndicatorView.swift in Sources */,
 				061058C12CC1FDF500426D64 /* ShadowView.swift in Sources */,
@@ -562,6 +581,7 @@
 				607F45F52CC386DD000A3C04 /* CustomWnH.swift in Sources */,
 				06B42E5D2CC77CD400F1463F /* DecriptAES.swift in Sources */,
 				06B42E352CC6398400F1463F /* PointVC.swift in Sources */,
+				603898F82CC9626100ABE512 /* LoginVC.swift in Sources */,
 				061058B02CC1F50100426D64 /* AppDelegate.swift in Sources */,
 				06B42E452CC6748100F1463F /* Stoke.swift in Sources */,
 				06B42E542CC68E3800F1463F /* ScannerBtn.swift in Sources */,

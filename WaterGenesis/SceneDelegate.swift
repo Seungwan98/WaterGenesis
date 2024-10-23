@@ -15,6 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
+        
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController?.navigationController?.navigationBar.isHidden = true
@@ -26,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("window")
             spinner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             window.addSubview(spinner)
-            window.rootViewController = UINavigationController(rootViewController: SplashVC())
+            window.rootViewController = UINavigationController(rootViewController: LoginVC())
             window.makeKeyAndVisible()
 
         }
