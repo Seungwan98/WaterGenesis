@@ -17,6 +17,7 @@ protocol PointView: AnyObject {
 
 class PointVC: UIViewController, PointView {
     
+    
     var presenter: PointPresenter?
     
     let manImage = UIImageView().then {
@@ -50,15 +51,8 @@ class PointVC: UIViewController, PointView {
         $0.layer.cornerRadius = 20
     }
     
-    let leftCal = UIView().then {
-        $0.backgroundColor = UIColor(red: 0.965, green: 0.965, blue: 0.965, alpha: 1)
-        $0.layer.cornerRadius = 10
-        
-    }
-    let rightCal = UIView().then {
-        $0.backgroundColor = UIColor(red: 0.965, green: 0.965, blue: 0.965, alpha: 1)
-        $0.layer.cornerRadius = 10
-    }
+    let leftCal = UIView()
+    let rightCal = UIView()
     
     lazy var calStack = UIStackView(arrangedSubviews: [leftCal, rightCal]).then {
         $0.spacing = 20
@@ -72,12 +66,24 @@ class PointVC: UIViewController, PointView {
         $0.titleLabel?.font = WDFont.bold(size: 20)
     }
 
+    let calendarView = ShadowView().then {
+        $0.shadowcolor = UIColor(red: 0.82, green: 0.82, blue: 0.82, alpha: 0.8)
+        $0.shadowopacity = 1
+        $0.shadowradius = 8
+        $0.shadowoffset = CGSize(width: 0, height: 3)
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 18
+        
+    }
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
         setBottomView()
+        setCalendarView()
 
     }
 
@@ -105,8 +111,11 @@ class PointVC: UIViewController, PointView {
         self.view.addSubview(manImage)
         self.view.addSubview(pointIcon)
         self.view.addSubview(pointInform)
-        self.view.addSubview(search)
 
+//        
+//        
+//        self.view.addSubview(self.scrollView)
+//        self.scrollView.addSubview(self.contentView)
        
 
         middleView.snp.makeConstraints {
@@ -144,6 +153,35 @@ class PointVC: UIViewController, PointView {
     
     func setBottomView() {
         self.view.addSubview(calStack)
+        self.view.addSubview(search)
+    
+        
+
+        _ = calStack.arrangedSubviews.enumerated().map { count, stack in
+            let gesture = UITapGestureRecognizer()
+            gesture.addTarget(self, action: #selector(calendarTapped))
+
+            stack.backgroundColor = UIColor(red: 0.965, green: 0.965, blue: 0.965, alpha: 1)
+            stack.layer.cornerRadius = 10
+            stack.tag = count
+            stack.isUserInteractionEnabled = true
+            
+            stack.addGestureRecognizer(gesture)
+            
+            
+            
+            let image = UIImageView(image: UIImage(named: "calendar"))
+            let transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+            image.transform = transform
+            
+            stack.addSubview(image)
+            image.snp.makeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.trailing.equalToSuperview()
+                
+            }
+        }
+        
         
         
         calStack.snp.makeConstraints {
@@ -160,5 +198,49 @@ class PointVC: UIViewController, PointView {
             $0.top.equalTo(calStack.snp.bottom).offset(20)
         }
     }
+    
+    func setCalendarView() {
+        self.view.addSubview(calendarView)
+        let calendar = CalendarView(delegate: self)
+        
+        calendarView.addSubview(calendar)
+        
+        calendar.snp.makeConstraints {
+            $0.width.height.equalToSuperview()
+        }
+        
+        calendarView.snp.makeConstraints {
+            $0.leading.equalTo(calStack)
+            $0.top.equalTo(calStack.snp.bottom)
+            $0.width.height.equalTo(300)
+        }
+     
+    }
+    
+    @objc
+    func calendarTapped(_ sender: UITapGestureRecognizer) {
+        if let tag = sender.view?.tag {
+            if tag == 0 {
+                pushleftCal()
+            } else {
+                pushrightCal()
+            }
+        }
+    }
+    
+    func pushleftCal() {
+        
+    }
+    func pushrightCal() {
+        
+    }
+  
 
+}
+
+extension PointVC: CalendarDelegate {
+    func getDate(date: Date) {
+        print("data")
+    }
+    
 }

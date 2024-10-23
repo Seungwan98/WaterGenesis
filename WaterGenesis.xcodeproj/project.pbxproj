@@ -259,6 +259,7 @@
 		06B42E2B2CC5FAF000F1463F /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				603898F12CC89D5E00ABE512 /* IntroduceLayers */,
 				06B42E462CC683A900F1463F /* trees */,
 				603898ED2CC7E63D00ABE512 /* calendar.png */,
 				06B42E3E2CC657B300F1463F /* megaphone.png */,
@@ -267,9 +268,6 @@
 				06B42E3C2CC6570200F1463F /* setting.png */,
 				06B42E382CC6410D00F1463F /* myprofile.png */,
 				06B42E362CC63A0200F1463F /* manCharactor.png */,
-				06B42E2C2CC5FB1200F1463F /* Layer_1-0.png */,
-				06B42E2D2CC5FB1200F1463F /* Layer_1-1.png */,
-				06B42E2E2CC5FB1200F1463F /* Layer_1-2.png */,
 				607F46072CC427F6000A3C04 /* leaves.png */,
 				607F46052CC42396000A3C04 /* face.png */,
 				607F45FE2CC3B6B8000A3C04 /* cleanIcon.png */,
@@ -355,6 +353,16 @@
 				AB7C8905741A8D9D3B46BE1F /* Pods-WaterGenesis.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		603898F12CC89D5E00ABE512 /* IntroduceLayers */ = {
+			isa = PBXGroup;
+			children = (
+				06B42E2C2CC5FB1200F1463F /* Layer_1-0.png */,
+				06B42E2D2CC5FB1200F1463F /* Layer_1-1.png */,
+				06B42E2E2CC5FB1200F1463F /* Layer_1-2.png */,
+			);
+			path = IntroduceLayers;
 			sourceTree = "<group>";
 		};
 		8B31834E443874146752BE21 /* Frameworks */ = {

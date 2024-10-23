@@ -21,7 +21,7 @@ class MainVC: UIViewController, UIScrollViewDelegate {
         $0.tintColor = .lightGray
     }
     let welcome = UILabel().then {
-        $0.text = "안녕하세요, 노혜인님!"
+        $0.text = "안녕하세요,\n노혜인님!"
         $0.numberOfLines = 0
         $0.font = .boldSystemFont(ofSize: 24)
     }
@@ -259,12 +259,11 @@ class MainVC: UIViewController, UIScrollViewDelegate {
         face.snp.makeConstraints {
             $0.width.height.equalTo(80)
             $0.centerY.equalToSuperview().inset(getHeight(height: 11))
-            $0.leading.equalToSuperview().inset(58)
+            $0.leading.equalToSuperview().inset(50)
         }
         welcome.snp.makeConstraints {
-            $0.width.equalTo(getWidth(width: 156))
             $0.height.equalTo(getHeight(height: 64))
-            $0.leading.equalTo(face.snp.trailing).offset(38)
+            $0.trailing.equalToSuperview().inset(50)
             $0.centerY.equalTo(face)
         }
         

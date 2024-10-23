@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("window")
             spinner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             window.addSubview(spinner)
-            window.rootViewController = UINavigationController(rootViewController: ViewController())
+            window.rootViewController = UINavigationController(rootViewController: SplashVC())
             window.makeKeyAndVisible()
 
         }
