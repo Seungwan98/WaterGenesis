@@ -29,6 +29,20 @@ class ScannerPresenter: ScannerViewPresenter {
        let decryptedData = DecryptAES.shared.getDecode(encodeData: codeText)
         
         // 서버 ->
+        guard let access = Token.shared.getAccessToken(), let data = decryptedData else { return }
+      
+        requestGet(bearer: access, url: "https://dev.waterlabelserver.com/v1/wtg/scan?code=\(data)", model: "Qr", completionHandler: { com, result in
+            if com {
+                if let code = result as? Qr {
+                    Model.shared.setQr(qr: code)
+                    self.view.endedScanned(result: true)
+                }
+            } else {
+                
+                
+            }
+            
+        })
         
         
     }

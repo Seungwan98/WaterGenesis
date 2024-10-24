@@ -27,9 +27,13 @@ extension UIColor {
        return UIColor(red: red / 255, green: green / 255, blue: blue / 255, alpha: alpha)
     }
 }
-extension String {
+extension String{
 
-
-
-
+    var isValidEmail: Bool{
+        let regExp = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$" //"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        return NSPredicate(format: "SELF MATCHES %@", regExp).evaluate(with: self)
+    }
 }
+
+

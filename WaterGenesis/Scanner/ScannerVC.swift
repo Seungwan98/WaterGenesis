@@ -11,7 +11,7 @@ import SnapKit
 import Then
 import Vision
 
-protocol ScannerView: AnyObject {
+protocol ScannerView {
     func endedScanned(result: Bool)
 }
 
@@ -230,6 +230,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
                 
                 if let code = detectionString {
                     presenter?.getQrCode(codeText: code)
+                    stopSession()
                 }
             }
                 

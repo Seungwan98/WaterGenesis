@@ -58,10 +58,17 @@
 		06B42E592CC7715A00F1463F /* ScannerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B42E582CC7715100F1463F /* ScannerPresenter.swift */; };
 		06B42E5D2CC77CD400F1463F /* DecriptAES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B42E5C2CC77CC800F1463F /* DecriptAES.swift */; };
 		06CB934C2CC7983900F774B1 /* PointPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB934B2CC7964000F774B1 /* PointPresenter.swift */; };
+		06CB934E2CC9D3E000F774B1 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB934D2CC9D3DA00F774B1 /* Checkbox.swift */; };
+		06CB93532CC9D8D800F774B1 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB93522CC9D8D000F774B1 /* UIViewController+.swift */; };
+		06CB93552CC9DD0C00F774B1 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB93542CC9DD0600F774B1 /* LoginPresenter.swift */; };
+		06CB93572CC9EC2000F774B1 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB93562CC9EC1F00F774B1 /* API.swift */; };
+		06CB93592CCA2D1600F774B1 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB93582CCA2D1000F774B1 /* SplashPresenter.swift */; };
+		06CB935B2CCA34BF00F774B1 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB935A2CCA34BB00F774B1 /* MainPresenter.swift */; };
+		06CB935D2CCA483B00F774B1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CB935C2CCA482D00F774B1 /* Model.swift */; };
 		603898EE2CC7E63D00ABE512 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 603898ED2CC7E63D00ABE512 /* calendar.png */; };
 		603898F02CC7E73900ABE512 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898EF2CC7E73900ABE512 /* CalendarView.swift */; };
 		603898F42CC921DF00ABE512 /* MyPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898F32CC921DF00ABE512 /* MyPagePresenter.swift */; };
-		603898F62CC95FEF00ABE512 /* TextColorAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898F52CC95FEF00ABE512 /* TextColorAttribute.swift */; };
+		603898F62CC95FEF00ABE512 /* CustomTextAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898F52CC95FEF00ABE512 /* CustomTextAttribute.swift */; };
 		603898F82CC9626100ABE512 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603898F72CC9626000ABE512 /* LoginVC.swift */; };
 		607F45F52CC386DD000A3C04 /* CustomWnH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F42CC386DD000A3C04 /* CustomWnH.swift */; };
 		607F45FA2CC3ABDD000A3C04 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607F45F92CC3ABDD000A3C04 /* MainVC.swift */; };
@@ -127,10 +134,17 @@
 		06B42E582CC7715100F1463F /* ScannerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerPresenter.swift; sourceTree = "<group>"; };
 		06B42E5C2CC77CC800F1463F /* DecriptAES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecriptAES.swift; sourceTree = "<group>"; };
 		06CB934B2CC7964000F774B1 /* PointPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointPresenter.swift; sourceTree = "<group>"; };
+		06CB934D2CC9D3DA00F774B1 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		06CB93522CC9D8D000F774B1 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		06CB93542CC9DD0600F774B1 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		06CB93562CC9EC1F00F774B1 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		06CB93582CCA2D1000F774B1 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		06CB935A2CCA34BB00F774B1 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		06CB935C2CCA482D00F774B1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		603898ED2CC7E63D00ABE512 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = calendar.png; path = trees/calendar.png; sourceTree = "<group>"; };
 		603898EF2CC7E73900ABE512 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		603898F32CC921DF00ABE512 /* MyPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePresenter.swift; sourceTree = "<group>"; };
-		603898F52CC95FEF00ABE512 /* TextColorAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorAttribute.swift; sourceTree = "<group>"; };
+		603898F52CC95FEF00ABE512 /* CustomTextAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextAttribute.swift; sourceTree = "<group>"; };
 		603898F72CC9626000ABE512 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		607F45F42CC386DD000A3C04 /* CustomWnH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWnH.swift; sourceTree = "<group>"; };
 		607F45F92CC3ABDD000A3C04 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -159,11 +173,12 @@
 		061058AD2CC1F50100426D64 /* WaterGenesis */ = {
 			isa = PBXGroup;
 			children = (
-				06B42E5B2CC77CAC00F1463F /* Services */,
 				061058CA2CC2085A00426D64 /* Sorce */,
+				06B42E5B2CC77CAC00F1463F /* Services */,
 				061058BE2CC1FDDF00426D64 /* Custom */,
-				061058BB2CC1FCD900426D64 /* Extension */,
 				06CB93482CC7932100F774B1 /* Splash */,
+				061058BB2CC1FCD900426D64 /* Extension */,
+				06CB93512CC9D85F00F774B1 /* Login */,
 				06B42E552CC68F4100F1463F /* Scanner */,
 				06CB93492CC795FB00F774B1 /* Main */,
 				603898F22CC921BC00ABE512 /* MyPage */,
@@ -174,7 +189,6 @@
 				061058A42CC1F50100426D64 /* AppDelegate.swift */,
 				061058AB2CC1F50100426D64 /* SceneDelegate.swift */,
 				061058AC2CC1F50100426D64 /* ViewController.swift */,
-				603898F72CC9626000ABE512 /* LoginVC.swift */,
 			);
 			path = WaterGenesis;
 			sourceTree = "<group>";
@@ -182,6 +196,7 @@
 		061058BB2CC1FCD900426D64 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				06CB93522CC9D8D000F774B1 /* UIViewController+.swift */,
 				061058BC2CC1FCE200426D64 /* UIView+.swift */,
 			);
 			path = Extension;
@@ -190,6 +205,8 @@
 		061058BE2CC1FDDF00426D64 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				06CB935C2CCA482D00F774B1 /* Model.swift */,
+				06CB934D2CC9D3DA00F774B1 /* Checkbox.swift */,
 				061058B92CC1FB6900426D64 /* PaddingPanel.swift */,
 				06B42E442CC6747D00F1463F /* Stoke.swift */,
 				06B42E322CC62E0F00F1463F /* ColorButton.swift */,
@@ -197,7 +214,7 @@
 				061058C02CC1FDF200426D64 /* ShadowView.swift */,
 				607F45F42CC386DD000A3C04 /* CustomWnH.swift */,
 				603898EF2CC7E73900ABE512 /* CalendarView.swift */,
-				603898F52CC95FEF00ABE512 /* TextColorAttribute.swift */,
+				603898F52CC95FEF00ABE512 /* CustomTextAttribute.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -323,6 +340,7 @@
 		06B42E5B2CC77CAC00F1463F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				06CB93562CC9EC1F00F774B1 /* API.swift */,
 				06B42E5C2CC77CC800F1463F /* DecriptAES.swift */,
 			);
 			path = Services;
@@ -331,6 +349,7 @@
 		06CB93482CC7932100F774B1 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				06CB93582CCA2D1000F774B1 /* SplashPresenter.swift */,
 				061058B52CC1FB1B00426D64 /* SplashVC.swift */,
 				061058B72CC1FB3C00426D64 /* PermissionPopUp.swift */,
 			);
@@ -340,6 +359,7 @@
 		06CB93492CC795FB00F774B1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				06CB935A2CCA34BB00F774B1 /* MainPresenter.swift */,
 				607F45F92CC3ABDD000A3C04 /* MainVC.swift */,
 			);
 			path = Main;
@@ -352,6 +372,15 @@
 				06B42E342CC6398200F1463F /* PointVC.swift */,
 			);
 			path = Point;
+			sourceTree = "<group>";
+		};
+		06CB93512CC9D85F00F774B1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				06CB93542CC9DD0600F774B1 /* LoginPresenter.swift */,
+				603898F72CC9626000ABE512 /* LoginVC.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2035CD71C7E261E68DDBC1DD /* Pods */ = {
@@ -558,16 +587,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06CB93532CC9D8D800F774B1 /* UIViewController+.swift in Sources */,
 				061058B82CC1FB4700426D64 /* PermissionPopUp.swift in Sources */,
 				061058AE2CC1F50100426D64 /* ViewController.swift in Sources */,
 				603898F02CC7E73900ABE512 /* CalendarView.swift in Sources */,
 				603898F42CC921DF00ABE512 /* MyPagePresenter.swift in Sources */,
+				06CB934E2CC9D3E000F774B1 /* Checkbox.swift in Sources */,
 				061058BA2CC1FB6C00426D64 /* PaddingPanel.swift in Sources */,
 				06B42E572CC68F5200F1463F /* ScannerUsePopUp.swift in Sources */,
 				06B42E522CC68DCE00F1463F /* ScannerVC.swift in Sources */,
 				06B42E332CC62E1A00F1463F /* ColorButton.swift in Sources */,
 				061058BD2CC1FCEA00426D64 /* UIView+.swift in Sources */,
-				603898F62CC95FEF00ABE512 /* TextColorAttribute.swift in Sources */,
+				603898F62CC95FEF00ABE512 /* CustomTextAttribute.swift in Sources */,
 				607F45FA2CC3ABDD000A3C04 /* MainVC.swift in Sources */,
 				061058C32CC1FFA200426D64 /* IndicatorView.swift in Sources */,
 				061058C12CC1FDF500426D64 /* ShadowView.swift in Sources */,
@@ -575,11 +606,16 @@
 				061058B62CC1FB1F00426D64 /* SplashVC.swift in Sources */,
 				061058AF2CC1F50100426D64 /* SceneDelegate.swift in Sources */,
 				06B42E3B2CC6513B00F1463F /* MyPageVC.swift in Sources */,
+				06CB935B2CCA34BF00F774B1 /* MainPresenter.swift in Sources */,
+				06CB93592CCA2D1600F774B1 /* SplashPresenter.swift in Sources */,
 				06B42E592CC7715A00F1463F /* ScannerPresenter.swift in Sources */,
 				06B42E2A2CC5F98800F1463F /* UIFont+.swift in Sources */,
 				06B42E282CC5F8ED00F1463F /* WDFont.swift in Sources */,
 				607F45F52CC386DD000A3C04 /* CustomWnH.swift in Sources */,
+				06CB93572CC9EC2000F774B1 /* API.swift in Sources */,
 				06B42E5D2CC77CD400F1463F /* DecriptAES.swift in Sources */,
+				06CB935D2CCA483B00F774B1 /* Model.swift in Sources */,
+				06CB93552CC9DD0C00F774B1 /* LoginPresenter.swift in Sources */,
 				06B42E352CC6398400F1463F /* PointVC.swift in Sources */,
 				603898F82CC9626100ABE512 /* LoginVC.swift in Sources */,
 				061058B02CC1F50100426D64 /* AppDelegate.swift in Sources */,

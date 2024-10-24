@@ -8,7 +8,18 @@
 import UIKit
 import Then
 import SnapKit
+
+protocol MyPageView {
+    func setName(text: String)
+
+    func setEmail(text: String)
+}
+
 class MyPageVC: UIViewController {
+
+    
+    
+    var presenter: MyPageViewPresenter?
     
     let treesSize: [CGSize] = [CGSize( width: 41, height: 131), CGSize(width: 98, height: 100), CGSize( width: 76, height: 140), CGSize(width: 110, height: 120), CGSize( width: 180, height: 160)]
     
@@ -71,7 +82,6 @@ class MyPageVC: UIViewController {
     
     let nameLabel = UILabel().then {
         
-        $0.text = "노혜인"
         $0.font = WDFont.bold(size: 24)
     }
     let emailLabel = UILabel().then {
@@ -110,6 +120,12 @@ class MyPageVC: UIViewController {
 
     }
   
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter?.viewWillAppear()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
@@ -258,6 +274,17 @@ class MyPageVC: UIViewController {
     
     
       
+    
+    
+}
+extension MyPageVC: MyPageView {
+    func setName(text: String) {
+        self.nameLabel.text = text
+    }
+    
+    func setEmail(text: String) {
+        self.emailLabel.text = text
+    }
     
     
 }

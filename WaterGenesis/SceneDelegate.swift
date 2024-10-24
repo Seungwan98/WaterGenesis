@@ -27,7 +27,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print("window")
             spinner.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             window.addSubview(spinner)
-            window.rootViewController = UINavigationController(rootViewController: LoginVC())
+            let vc  = SplashVC()
+            vc.presenter = SplashPresenter(view: vc)
+            let nav = UINavigationController(rootViewController: vc)
+            nav.hideKeyboardWhenTappedAround()
+            window.rootViewController = nav
             window.makeKeyAndVisible()
 
         }

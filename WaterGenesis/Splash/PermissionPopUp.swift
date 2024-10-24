@@ -12,8 +12,9 @@ import UIKit
 import Then
 import SnapKit
 
-protocol PermissionPopUpDelegate: NSObjectProtocol {
-    func permissionallowbtnpressed()
+protocol PermissionPopUpDelegate {
+    func pushMain()
+    func pushLogin()
     
 }
 /**
@@ -98,7 +99,7 @@ class PermissionPopUp: UIView {
     
     private var allowbtn = UIButton()
     
-    weak var delegate: PermissionPopUpDelegate?
+    var delegate: PermissionPopUpDelegate?
     
     init(frame: CGRect, delegate: PermissionPopUpDelegate) {
         super.init(frame: frame)
@@ -123,9 +124,11 @@ class PermissionPopUp: UIView {
     @objc func allowbtnpressed(sender: UIButton) {
         UIView.animate(withDuration: 0.2) { [unowned self] in
             self.alpha = 0
+            UserDefaults.standard.set(true, forKey: "permission_success")
+            self.delegate?.pushLogin()
+
         }
         
-        self.delegate?.permissionallowbtnpressed()
     }
     
     override func layoutSubviews() {

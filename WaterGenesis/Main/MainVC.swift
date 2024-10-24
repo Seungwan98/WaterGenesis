@@ -8,7 +8,15 @@
 import UIKit
 import Then
 import SnapKit
+
+protocol MainView {
+    func setWelcome(text: NSAttributedString)
+    func setPoint(point: String)
+}
+
 class MainVC: UIViewController, UIScrollViewDelegate {
+    
+    var presenter: MainViewPresenter?
     
     var pageCount = 0
     
@@ -16,12 +24,14 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     let contentView = UIView()
     
     
+    
+    
     let face = UIImageView(image: UIImage(systemName: "person.circle.fill")).then {
         $0.contentMode = .scaleAspectFill
         $0.tintColor = .lightGray
     }
     let welcome = UILabel().then {
-        $0.text = "안녕하세요,\n노혜인님!"
+
         $0.numberOfLines = 0
         $0.font = .boldSystemFont(ofSize: 24)
     }
@@ -117,10 +127,11 @@ class MainVC: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presenter?.viewDidLoad()
+        
         setUI()
         
-        let textAttribute = TextColorAttribute.shared.colorize(text: "안녕하세요,\n노혜인님!", target: "노혜인", color: maincolor)
-        self.welcome.attributedText = textAttribute
+
         layerScrollView.delegate = self
         
         setImageViews()
@@ -355,4 +366,16 @@ class MainVC: UIViewController, UIScrollViewDelegate {
 
     }
 
+}
+
+extension MainVC: MainView {
+    func setPoint(point: String) {
+        self.point.text = point
+    }
+    
+    func setWelcome(text: NSAttributedString) {
+        self.welcome.attributedText = text
+    }
+    
+    
 }

@@ -14,13 +14,16 @@ import SnapKit
 protocol PointView: AnyObject {
     func setLeft(date: String)
     func setRight(date: String)
+    
+    func setInform(text: NSAttributedString)
+    func setStack(arr: [NSAttributedString])
 }
 
 class PointVC: UIViewController {
    
     
     
-    var presenter: PointPresenter?
+    var presenter: PointViewPresenter?
     
     let scrollView = UIScrollView()
     let contentView = UIView()
@@ -85,7 +88,7 @@ class PointVC: UIViewController {
     let rightCalBtn = UIView()
     
     var labels = [UILabel]()
-    
+    var stackLabels: [UILabel] = []
     lazy var calStack = UIStackView(arrangedSubviews: [leftCalBtn, rightCalBtn]).then {
         $0.spacing = 20
         $0.axis = .horizontal
@@ -131,6 +134,9 @@ class PointVC: UIViewController {
         setStackView()
         setCalendarView()
         
+        
+        presenter?.viewDidLoad()
+        
 
     }
 
@@ -154,15 +160,14 @@ class PointVC: UIViewController {
     func setStackView() {
         self.middleView.addSubview(self.mainStack)
         let texts: [String] =  ["누적 스캔 횟수", "이달의 스캔 횟수", "보유 포인트"]
-        let textN = ["0", "5", "350"]
        _ = texts.enumerated().map { count, text in
            
            let firstLabel = UILabel()
-           firstLabel.text = textN[count]
+    
            firstLabel.font = WDFont.bold(size: 24)
            firstLabel.textAlignment = .center
 
-          
+           stackLabels.append(firstLabel)
            firstStack.addArrangedSubview(firstLabel)
            
          
@@ -322,7 +327,7 @@ class PointVC: UIViewController {
             
             calArr[i].isHidden = true
             
-            let calendar = CalendarView(delegate: presenter!).then {
+            let calendar = CalendarView(delegate: presenter! as! CalendarDelegate).then {
                 $0.tag = i
                 $0.layer.cornerRadius = 20
             }
@@ -394,6 +399,17 @@ class PointVC: UIViewController {
 
 
 extension PointVC: PointView {
+    func setStack(arr: [NSAttributedString]) {
+        _ = stackLabels.enumerated().map { count, label in
+            label.attributedText = arr[count]
+            
+        }
+    }
+    
+    func setInform(text: NSAttributedString) {
+        self.informlabel.attributedText = text
+    }
+    
     func setLeft(date: String) {
         self.labels[0].text = date
         self.leftCalendarView.isHidden = true
